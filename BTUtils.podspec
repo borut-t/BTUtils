@@ -12,7 +12,12 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.subspec 'NSString' do |s1|
-    s1.source_files = 'BTUtils/NSString/*.{h,m}'
+    s1.source_files = 'BTUtils/NSString/NSString+BTUtils.{h,m}'
+    
+    s1.subspec 'GTMNSString' do |s11|
+      s11.source_files = 'BTUtils/NSString/GTMNSString+HTML.{h,m}'
+      s11.requires_arc = false
+    end
   end
 
   s.subspec 'NSData' do |s2|
@@ -30,10 +35,4 @@ Pod::Spec.new do |s|
   s.subspec 'UITabBar' do |s5|
     s5.source_files = 'BTUtils/UITabBarController/*.{h,m}'
   end
-
-#  s.subspec 'GTMNSString' do |s6|
-#    s6.source_files = 'BTUtils/GTMNSString/*.{h.m}'
-#    s6.requires_arc = false
-#  end
-
 end
