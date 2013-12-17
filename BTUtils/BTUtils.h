@@ -118,7 +118,7 @@
 + (void)showNetworkLoader:(BOOL)show;
 
 /**
- Returns status of the internet connection.
+ Returns status of the internet connection using Reachability class.
  */
 + (BOOL)isReachable;
 
