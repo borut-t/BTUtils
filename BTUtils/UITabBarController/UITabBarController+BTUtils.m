@@ -39,12 +39,12 @@
 
 BOOL tabBarIsInTransition = NO;
 
--(BOOL)shouldAutorotate
+- (BOOL)shouldAutorotate
 {
     return [[self.viewControllers lastObject] shouldAutorotate];
 }
 
--(NSUInteger)supportedInterfaceOrientations
+- (NSUInteger)supportedInterfaceOrientations
 {
     return [[self.viewControllers lastObject] supportedInterfaceOrientations];
 }
