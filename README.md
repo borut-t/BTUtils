@@ -4,7 +4,13 @@ BTUtils
 Usable utility methods and categories.
 
 
+## ARC Support
+------------------
+BTBadgeView fully supports ARC.
+
+
 ## Methods - Device
+--------------------
 	+ (NSString *)OSVersion;
 
 Returns the current version of the operating system.
