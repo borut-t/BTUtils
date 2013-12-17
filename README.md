@@ -7,11 +7,7 @@ BTBadgeView fully supports ARC.
 
 
 ## Installation
-### CocoaPods
-Add `pod ‘BTUtils’` to your Podfile.
-
-### Manually
-Drag class files into your project.
+Add `pod ‘BTUtils’` to your Podfile or drag class files into your project.
 
 
 ## Methods - Device
