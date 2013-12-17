@@ -34,7 +34,18 @@
 
 @interface UITabBarController (BTUtils)
 
+/**
+ Shows tabBar with/without animation.
+ 
+ @param animated
+ */
 - (void)showTabBarAnimated:(BOOL)animated;
+
+/**
+ Hides tabBar with/without animation.
+ 
+ @param animated
+ */
 - (void)hideTabBarAnimated:(BOOL)animated;
 
 @end

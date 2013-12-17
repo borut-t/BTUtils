@@ -34,8 +34,26 @@
 
 @interface UIImage (BTUtils)
 
+/**
+ Returns image with rounded corners and border color.
+ 
+ @param radius A radis to apply to round corners.
+ @param borderColor A color to apply to border.
+ */
 - (UIImage *)imageWithRoundedCornersRadius:(float)radius andBorderColor:(UIColor *)borderColor;
+
+/**
+ Returns scaled image for target size.
+ 
+ @param targetSize Target size to scale image to.
+ */
 - (UIImage *)imageByScalingAndCroppingForSize:(CGSize)targetSize;
+
+/**
+ Returns image given with opacity.
+ 
+ @param alpha An alpha value set for opacity.
+ */
 - (UIImage *)imageByApplyingAlpha:(CGFloat)alpha;
 
 @end
