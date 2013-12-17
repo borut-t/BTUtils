@@ -10,9 +10,8 @@ BTBadgeView fully supports ARC.
 Add `pod ‘BTUtils’` to your Podfile or drag class files into your project.
 
 
-## Methods - Device
+## Methods
 ### Device
-#### Device
 	+ (NSString *)OSVersion;
 
 Returns the current version of the operating system.
@@ -58,7 +57,7 @@ Returns YES if device screen has retina resolution.
 Returns the string representation of a specified CFUUID object.
 
 
-## Methods - Network
+### Network
 	+ (void)showNetworkLoader:(BOOL)show;
 
 Toggles network activity indicator.
@@ -80,7 +79,7 @@ Returns App Store link for selected appId.
 Url encodes string.
 
 
-## Methods - Image
+### Image
 	+ (UIImage *)imageNamed:(NSString *)name;
 
 Returns uncached image from filesystem.
@@ -98,7 +97,7 @@ Captures screen for selected view.
 Captures frame inside selected view.
 
 
-## Methods - Text
+### Text
 	+ (CGSize)getTextSizeForText:(NSString *)text font:(UIFont *)font fieldSize:(CGSize)size;
 
 Returns text bounds size for specified text in predicted field.
@@ -108,7 +107,8 @@ Returns text bounds size for specified text in predicted field.
 Returns boolean whenever email is valid or not.
 
 
-## Categories - NSString
+## Categories
+### NSString
 	- (NSString *)stringByDecodingHTMLEntities;
 
 Decode all HTML entities using GTM.
@@ -142,13 +142,13 @@ MD5 crypto hash.
 SHA1 crypto hash.
 
 
-## Categories - NSData
+### NSData
 	- (NSString *)base64EncodedString;
 
 Creates an NSString object that contains the base 64 encoding of the receiver's data. Lines are broken at 64 characters long.
 
 
-## Categories - UIImage
+### UIImage
 	- (UIImage *)imageWithRoundedCornersRadius:(float)radius andBorderColor:(UIColor *)borderColor;
 
 Returns image with rounded corners and border color.
@@ -162,7 +162,7 @@ Returns scaled image for target size.
 Returns image with given opacity.
 
 
-## Categories - UITabBarController
+### UITabBarController
 	- (void)showTabBarAnimated:(BOOL)animated;
 
 Shows tabBar with/without animation.
@@ -172,7 +172,8 @@ Shows tabBar with/without animation.
 Hides tabBar with/without animation.
 
 
-## Helpers - UINavigationController
+## Helpers
+### UINavigationController
 	- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 
 	- (BOOL)shouldAutorotate
@@ -180,7 +181,7 @@ Hides tabBar with/without animation.
 	- (NSUInteger)supportedInterfaceOrientations
 
 
-## Helpers - UITabBarController
+### UITabBarController
 	- (BOOL)shouldAutorotate
 
 	- (NSUInteger)supportedInterfaceOrientations
