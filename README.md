@@ -173,8 +173,8 @@ Hides tabBar with/without animation.
 
 
 ## Helpers - UITabBarController
-	-(BOOL)shouldAutorotate
+	- (BOOL)shouldAutorotate
 
-	-(NSUInteger)supportedInterfaceOrientations
+	- (NSUInteger)supportedInterfaceOrientations
 
 	- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
