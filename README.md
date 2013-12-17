@@ -1,4 +1,4 @@
 BTUtils
 =======
 
-Usable utility methods.
+Usable utility methods and categories.
