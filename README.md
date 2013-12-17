@@ -5,8 +5,8 @@ Usable utility methods and categories.
 
 
 ## Methods
-+ `(NSString *)OSVersion;`
-Returns the current version of the operating system.
+	+ `(NSString *)OSVersion;`
+	Returns the current version of the operating system.
 
 + `(NSString *)appVersion;`
 Returns app version string using key 'CFBundleShortVersionString'.
