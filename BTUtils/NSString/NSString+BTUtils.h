@@ -45,7 +45,7 @@
 - (NSString *)stringByEncodingHTMLEntities;
 
 /**
- Get index of character withing string.
+ Get index of character within string.
  */
 - (NSUInteger)indexOf:(NSString *)character;
 
