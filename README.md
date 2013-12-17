@@ -98,3 +98,38 @@ Returns text bounds size for specified text in predicted field.
 	+ (BOOL)isEmail:(NSString *)email;
 
 Returns boolean whenever email is valid or not.
+
+
+
+## Categories - NSString
+	- (NSString *)stringByDecodingHTMLEntities;
+
+Decode all HTML entities using GTM.
+
+	- (NSString *)stringByEncodingHTMLEntities;
+
+Encode all HTML entities using GTM
+
+	- (NSUInteger)indexOf:(NSString *)character;
+
+Get index of character within string.
+
+	- (NSString *)urlEncode;
+
+Returns url encoded string.
+
+	- (NSString *)trim;
+
+Trims leading and trailing whitespaces from given string.
+
+	- (NSData *)dataFromBase64String;
+
+Creates an NSData object containing the base64 decoded representation of the base64 string.
+
+	- (NSString *)MD5;
+
+MD5 crypto hash.
+
+	- (NSString *)SHA1;
+
+SHA1 crypto hash.
