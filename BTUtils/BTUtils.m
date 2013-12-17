@@ -31,11 +31,6 @@
 //
 
 #import "BTUtils.h"
-#import "Reachability.h"
-#import "NSString+BTUtils.h"
-#import "UIImage+BTUtils.h"
-#import "UINavigationController+BTUtils.h"
-#import "UITabBarController+BTUtils.h"
 
 @implementation BTUtils
 
