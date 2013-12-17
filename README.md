@@ -100,7 +100,6 @@ Returns text bounds size for specified text in predicted field.
 Returns boolean whenever email is valid or not.
 
 
-
 ## Categories - NSString
 	- (NSString *)stringByDecodingHTMLEntities;
 
@@ -133,3 +132,49 @@ MD5 crypto hash.
 	- (NSString *)SHA1;
 
 SHA1 crypto hash.
+
+
+## Categories - NSData
+	- (NSString *)base64EncodedString;
+
+Creates an NSString object that contains the base 64 encoding of the receiver's data. Lines are broken at 64 characters long.
+
+
+## Categories - UIImage
+	- (UIImage *)imageWithRoundedCornersRadius:(float)radius andBorderColor:(UIColor *)borderColor;
+
+Returns image with rounded corners and border color.
+
+	- (UIImage *)imageByScalingAndCroppingForSize:(CGSize)targetSize;
+
+Returns scaled image for target size.
+
+	- (UIImage *)imageByApplyingAlpha:(CGFloat)alpha;
+
+Returns image with given opacity.
+
+
+## Categories - UITabBarController
+	- (void)showTabBarAnimated:(BOOL)animated;
+
+Shows tabBar with/without animation.
+
+	- (void)hideTabBarAnimated:(BOOL)animated;
+
+Hides tabBar with/without animation.
+
+
+## Helpers - UINavigationController
+	- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+
+	- (BOOL)shouldAutorotate
+
+	- (NSUInteger)supportedInterfaceOrientations
+
+
+## Helpers - UITabBarController
+	-(BOOL)shouldAutorotate
+
+	-(NSUInteger)supportedInterfaceOrientations
+
+	- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
