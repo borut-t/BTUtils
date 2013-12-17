@@ -11,6 +11,8 @@ Add `pod ‘BTUtils’` to your Podfile or drag class files into your project.
 
 
 ## Methods - Device
+### Device
+#### Device
 	+ (NSString *)OSVersion;
 
 Returns the current version of the operating system.
