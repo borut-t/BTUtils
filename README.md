@@ -1,5 +1,5 @@
 ## Purpose
-Usable utility methods and categories.
+Usable utility methods, categories, macros and helpers to speed up your iOS development.
 
 
 ## ARC Support
