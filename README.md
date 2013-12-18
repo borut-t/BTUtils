@@ -10,6 +10,24 @@ BTBadgeView fully supports ARC.
 Add `pod ‘BTUtils’` to your Podfile or drag class files into your project.
 
 
+## Macros
+	RGB(r, g, b)
+
+UIColor on-liner for native colorWithRed method with without alpha.
+
+	RGBA(r, g, b, a)
+
+UIColor on-liner for native colorWithRed method with specified alpha.
+
+	SYSTEM_VERSION_GREATER_OR_EQUAL_TO(v)
+
+Check if system version is greater than or equal to specific string version.
+
+	BSLog(format, …)
+
+Drop-in replacement for standard NSLog.
+
+
 ## Methods
 ### Device
 	+ (NSString *)OSVersion;
@@ -105,20 +123,6 @@ Returns text bounds size for specified text in predicted field.
 	+ (BOOL)isEmail:(NSString *)email;
 
 Returns boolean whenever email is valid or not.
-
-
-## Macros
-	RGB(r, g, b)
-
-UIColor on-liner for native colorWithRed method with without alpha.
-
-	RGBA(r, g, b, a)
-
-UIColor on-liner for native colorWithRed method with specified alpha.
-
-	SYSTEM_VERSION_GREATER_OR_EQUAL_TO(v)
-
-Check if system version is greater than or equal to specific string version.
 
 
 ## Categories
