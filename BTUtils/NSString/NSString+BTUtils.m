@@ -139,6 +139,23 @@ void *NewBase64Decode(const char *inputBuffer, size_t length, size_t *outputLeng
 	return [NSString stringWithString:[self gtm_stringByEscapingForAsciiHTML]];
 }
 
+- (NSString *)stringByConvertingHTMLToPlainText
+{
+    NSScanner *theScanner;
+    NSString *text = nil;
+    NSString *output = self;
+    theScanner = [NSScanner scannerWithString:output];
+    
+    while ([theScanner isAtEnd] == NO) {
+        [theScanner scanUpToString:@"<" intoString:NULL];
+        [theScanner scanUpToString:@">" intoString:&text];
+        output = [output stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"%@>", text] withString:@""];
+    }
+    output = [[output stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] stringByDecodingHTMLEntities];
+    
+    return output;
+}
+
 - (NSUInteger)indexOf:(NSString *)character
 {
     NSRange range = [self rangeOfString:character];

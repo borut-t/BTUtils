@@ -45,6 +45,11 @@
 - (NSString *)stringByEncodingHTMLEntities;
 
 /**
+ Strip HTML tags from HTML string to plain text.
+ */
+- (NSString *)stringByConvertingHTMLToPlainText;
+
+/**
  Get index of character within string.
  */
 - (NSUInteger)indexOf:(NSString *)character;
