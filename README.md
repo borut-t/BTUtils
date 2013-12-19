@@ -193,7 +193,7 @@ Returns masked view with rounded corners.
 
 Returns view frame size.
 
-- (void)setSize:(CGSize)size;
+	- (void)setSize:(CGSize)size;
 
 	Sets view frame size.
 
