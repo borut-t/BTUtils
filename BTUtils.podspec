@@ -30,7 +30,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'UIView' do |s4|
-    s4.source_files = 'BTUtils/UIView/*.{h,m}’
+    s4.source_files = 'BTUtils/UIView/*.{h,m}'
   end
 
   s.subspec 'UINavigationController' do |s5|
