@@ -184,6 +184,20 @@ Returns scaled image for target size.
 Returns image with given opacity.
 
 
+### UIView
+	- (void)maskRoundCorners:(UIRectCorner)corners radius:(CGFloat)radius;
+
+Returns masked view with rounded corners.
+
+	- (CGSize)size;
+
+Returns view frame size.
+
+- (void)setSize:(CGSize)size;
+
+	Sets view frame size.
+
+
 ### UITabBarController
 	- (void)showTabBarAnimated:(BOOL)animated;
 
