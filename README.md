@@ -195,7 +195,7 @@ Returns view frame size.
 
 	- (void)setSize:(CGSize)size;
 
-	Sets view frame size.
+Sets view frame size.
 
 
 ### UITabBarController
