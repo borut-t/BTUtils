@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'zlib', :file => 'LICENCE.md' }
   s.author       = 'Borut Tomažin'
   s.platform     = :ios, '5.0'
-  s.source       = { :git => 'https://github.com/borut-t/BTUtils.git', :tag => ‘1.1’ }
+  s.source       = { :git => 'https://github.com/borut-t/BTUtils.git', :tag => '1.1' }
   s.source_files = 'BTUtils/BTUtils.{h,m}'
   s.dependency   'Reachability', '~> 3.1.1'
   s.frameworks   = 'UIKit'
@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
     s3.source_files = 'BTUtils/UIImage/*.{h,m}'
   end
 
-  s.subspec ‘UIView’ do |s4|
+  s.subspec 'UIView' do |s4|
     s4.source_files = 'BTUtils/UIView/*.{h,m}’
   end
 
