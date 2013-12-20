@@ -35,6 +35,7 @@
 #import "NSString+BTUtils.h"
 #import "NSData+BTUtils.h"
 #import "UIImage+BTUtils.h"
+#import "UIView+BTUtils.h"
 #import "UINavigationController+BTUtils.h"
 #import "UITabBarController+BTUtils.h"
 
