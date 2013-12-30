@@ -115,16 +115,6 @@ Captures screen for selected view.
 Captures frame inside selected view.
 
 
-### Text
-	+ (CGSize)getTextSizeForText:(NSString *)text font:(UIFont *)font fieldSize:(CGSize)size;
-
-Returns text bounds size for specified text in predicted field.
-
-	+ (BOOL)isEmail:(NSString *)email;
-
-Returns boolean whenever email is valid or not.
-
-
 ## Categories
 ### NSString
 	- (NSString *)stringByDecodingHTMLEntities;
@@ -155,6 +145,10 @@ Trims leading and trailing whitespaces from given string.
 
 Creates an NSData object containing the base64 decoded representation of the base64 string.
 
+	- (NSString *)addUrlParam:(NSString *)param withValue:(NSString *)value;
+
+Adds new param with value to the existing url with correct formatting.
+
 	- (NSString *)MD5;
 
 MD5 crypto hash.
@@ -162,6 +156,14 @@ MD5 crypto hash.
 	- (NSString *)SHA1;
 
 SHA1 crypto hash.
+
+	- (CGSize)textSizeWithFont:(UIFont *)font fieldSize:(CGSize)size;
+
+Returns text bounds size for specified text in predicted field.
+
+	- (BOOL)isValidEmail:(NSString *)email;
+
+Returns boolean whenever email is valid or not.
 
 
 ### NSData
