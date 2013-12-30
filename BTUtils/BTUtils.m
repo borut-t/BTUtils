@@ -1,7 +1,7 @@
 //
 //  BTUtils.m
 //
-//  Version 1.1
+//  Version 1.2
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2013 Borut Tomazin
@@ -235,30 +235,6 @@
     UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return img;
-}
-
-
-
-#pragma mark - Text
-+ (CGSize)getTextSizeForText:(NSString *)text font:(UIFont *)font fieldSize:(CGSize)size
-{
-    if ([text respondsToSelector:@selector(boundingRectWithSize:options:attributes:context:)]) {
-        CGSize boundingBox = [text boundingRectWithSize:size
-                                                options:NSStringDrawingUsesLineFragmentOrigin
-                                             attributes:@{NSFontAttributeName:font}
-                                                context:nil].size;
-        return CGSizeMake(ceil(boundingBox.width), ceil(boundingBox.height));
-    }
-    else {
-        #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
-        return [text sizeWithFont:font constrainedToSize:size lineBreakMode:UILineBreakModeWordWrap];
-        #pragma GCC diagnostic warning "-Wdeprecated-declarations"
-    }
-}
-
-+ (BOOL)isEmail:(NSString *)email
-{
-    return [[NSPredicate predicateWithFormat:@"SELF MATCHES %@", @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"] evaluateWithObject:email];
 }
 
 @end

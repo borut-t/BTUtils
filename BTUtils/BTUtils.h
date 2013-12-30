@@ -1,7 +1,7 @@
 //
 //  BTUtils.h
 //
-//  Version 1.1
+//  Version 1.2
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2013 Borut Tomazin
@@ -187,23 +187,5 @@
  */
 + (UIImage *)captureFrame:(CGRect)frame inView:(UIView *)view;
 
-
-
-#pragma mark - Text
-/**
- Returns text bounds size for specified text in predicted field.
- 
- @param text A text to calculate bounds from.
- @param font A font to apply to text.
- @param size A bounds field size.
- */
-+ (CGSize)getTextSizeForText:(NSString *)text font:(UIFont *)font fieldSize:(CGSize)size;
-
-/**
- Returns boolean whenever email is valid or not.
- 
- @param email An email to test.
- */
-+ (BOOL)isEmail:(NSString *)email;
 
 @end

@@ -1,7 +1,7 @@
 //
 //  NSString+BTUtils.h
 //
-//  Version 1.1
+//  Version 1.2
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2013 Borut Tomazin
@@ -30,7 +30,7 @@
 //  3. This notice may not be removed or altered from any source distribution.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface NSString (BTUtils)
 
@@ -51,8 +51,10 @@
 
 /**
  Get index of character within string.
+ 
+ @param string A string to get position index from.
  */
-- (NSUInteger)indexOf:(NSString *)character;
+- (NSUInteger)indexOf:(NSString *)string;
 
 /**
  Returns url encoded string.
@@ -68,6 +70,30 @@
  Creates an NSData object containing the base64 decoded representation of the base64 string.
  */
 - (NSData *)dataFromBase64String;
+
+/**
+ Adds new param with value to the existing url with correct formatting.
+ 
+ @param param A url path parameter.
+ @param value A url path value.
+ */
+- (NSString *)addUrlParam:(NSString *)param withValue:(NSString *)value;
+
+/**
+ Returns text bounds size for specified text in predicted field.
+ 
+ @param text A text to calculate bounds from.
+ @param font A font to apply to text.
+ @param size A bounds field size.
+ */
+- (CGSize)textSizeWithFont:(UIFont *)font fieldSize:(CGSize)size;
+
+/**
+ Returns boolean whenever email is valid or not.
+ 
+ @param email An email to test.
+ */
+- (BOOL)isValidEmail:(NSString *)email;
 
 
 

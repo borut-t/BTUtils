@@ -1,7 +1,7 @@
 //
 //  NSString+BTUtils.m
 //
-//  Version 1.1
+//  Version 1.2
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2013 Borut Tomazin
@@ -156,9 +156,9 @@ void *NewBase64Decode(const char *inputBuffer, size_t length, size_t *outputLeng
     return output;
 }
 
-- (NSUInteger)indexOf:(NSString *)character
+- (NSUInteger)indexOf:(NSString *)string
 {
-    NSRange range = [self rangeOfString:character];
+    NSRange range = [self rangeOfString:string];
     return range.location;
 }
 
@@ -182,6 +182,40 @@ void *NewBase64Decode(const char *inputBuffer, size_t length, size_t *outputLeng
 	return result;
 }
 
+- (NSString *)addUrlParam:(NSString *)param withValue:(NSString *)value
+{
+    NSString *pathSpecifier = @"?";
+    if ([self rangeOfString:@"?" options:(NSCaseInsensitiveSearch)].location != NSNotFound) {
+        pathSpecifier = @"&";
+    }
+    return [self stringByAppendingFormat:@"%@%@=%@",pathSpecifier,param,value];
+}
+
+- (CGSize)textSizeWithFont:(UIFont *)font fieldSize:(CGSize)size;
+{
+    if (self == nil || [self trim].length == 0) {
+        return CGSizeZero;
+    }
+    
+    if ([self respondsToSelector:@selector(boundingRectWithSize:options:attributes:context:)]) {
+        CGSize boundingBox = [self boundingRectWithSize:size
+                                                options:NSStringDrawingUsesLineFragmentOrigin
+                                             attributes:@{NSFontAttributeName:font}
+                                                context:nil].size;
+        return CGSizeMake(ceil(boundingBox.width), ceil(boundingBox.height));
+    }
+    else {
+        #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+        return [self sizeWithFont:font constrainedToSize:size lineBreakMode:UILineBreakModeWordWrap];
+        #pragma GCC diagnostic warning "-Wdeprecated-declarations"
+    }
+}
+
+- (BOOL)isValidEmail:(NSString *)email
+{
+    return [[NSPredicate predicateWithFormat:@"SELF MATCHES %@", @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"] evaluateWithObject:email];
+}
+
 
 
 #pragma mark - Crypto
@@ -194,7 +228,7 @@ void *NewBase64Decode(const char *inputBuffer, size_t length, size_t *outputLeng
     unsigned char md5Buffer[CC_MD5_DIGEST_LENGTH];
     
     // Create 16 byte MD5 hash value, store in buffer
-    CC_MD5(ptr, strlen(ptr), md5Buffer);
+    CC_MD5(ptr, (unsigned int)strlen(ptr), md5Buffer);
     
     // Convert MD5 value in the buffer to NSString of hex values
     NSMutableString *output = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
@@ -212,7 +246,7 @@ void *NewBase64Decode(const char *inputBuffer, size_t length, size_t *outputLeng
     
     uint8_t digest[CC_SHA1_DIGEST_LENGTH];
     
-    CC_SHA1(data.bytes, data.length, digest);
+    CC_SHA1(data.bytes, (unsigned int)data.length, digest);
     
     NSMutableString* output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
     
