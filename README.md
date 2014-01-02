@@ -161,7 +161,7 @@ SHA1 crypto hash.
 
 Returns text bounds size for specified text in predicted field.
 
-	- (BOOL)isValidEmail:(NSString *)email;
+	- (BOOL)isEmailValid;
 
 Returns boolean whenever email is valid or not.
 
