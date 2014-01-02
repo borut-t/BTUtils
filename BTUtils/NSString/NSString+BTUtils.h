@@ -90,10 +90,8 @@
 
 /**
  Returns boolean whenever email is valid or not.
- 
- @param email An email to test.
  */
-- (BOOL)isValidEmail:(NSString *)email;
+- (BOOL)isEmailValid;
 
 
 

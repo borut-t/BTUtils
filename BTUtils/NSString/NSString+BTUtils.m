@@ -211,9 +211,9 @@ void *NewBase64Decode(const char *inputBuffer, size_t length, size_t *outputLeng
     }
 }
 
-- (BOOL)isValidEmail:(NSString *)email
+- (BOOL)isEmailValid
 {
-    return [[NSPredicate predicateWithFormat:@"SELF MATCHES %@", @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"] evaluateWithObject:email];
+    return [[NSPredicate predicateWithFormat:@"SELF MATCHES %@", @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"] evaluateWithObject:self];
 }
 
 
