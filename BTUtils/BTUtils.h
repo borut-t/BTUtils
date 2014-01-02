@@ -52,10 +52,6 @@
 #	define BSLog(...)
 #endif
 
-#ifdef __IPHONE_6_0
-    #define UILineBreakModeWordWrap NSLineBreakByWordWrapping
-#endif
-
 
 @interface BTUtils : NSObject
 

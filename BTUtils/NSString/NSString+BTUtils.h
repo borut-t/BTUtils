@@ -32,6 +32,10 @@
 
 #import <UIKit/UIKit.h>
 
+#ifdef __IPHONE_6_0
+    #define UILineBreakModeWordWrap NSLineBreakByWordWrapping
+#endif
+
 @interface NSString (BTUtils)
 
 /**
