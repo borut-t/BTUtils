@@ -1,7 +1,7 @@
 //
 //  NSData+BTUtils.h
 //
-//  Version 1.2
+//  Version 1.3
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2013 Borut Tomazin
@@ -71,6 +71,30 @@
 {
     CGRect frame = self.frame;
     frame.size = size;
+    self.frame = frame;
+}
+
+- (CGFloat)width
+{
+    return self.frame.size.width;
+}
+
+- (void)setWidth:(CGFloat)width
+{
+    CGRect frame = self.frame;
+    frame.size.width = width;
+    self.frame = frame;
+}
+
+- (CGFloat)height
+{
+    return self.frame.size.height;
+}
+
+- (void)setHeight:(CGFloat)height
+{
+    CGRect frame = self.frame;
+    frame.size.height = height;
     self.frame = frame;
 }
 

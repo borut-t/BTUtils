@@ -1,7 +1,7 @@
 //
 //  NSData+BTUtils.h
 //
-//  Version 1.2
+//  Version 1.3
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2013 Borut Tomazin
@@ -36,22 +36,42 @@
 
 /**
  Returns masked view with rounded corners.
- 
  @param corners A bitmask value that identifies the corners that you want rounded. You can use this parameter to round only a subset of the corners of the rectangle.
  @param radius A radius value applied to mask.
  */
 - (void)maskRoundCorners:(UIRectCorner)corners radius:(CGFloat)radius;
 
 /**
- Returns view frame size.
+ Gets frame size.
  */
 - (CGSize)size;
 
 /**
- Sets view frame size.
- 
+ Sets frame size.
  @param size Frame size.
  */
 - (void)setSize:(CGSize)size;
+
+/**
+ Gets frame width.
+ */
+- (CGFloat)width;
+
+/**
+ Sets frame width.
+ @param width Frame width.
+ */
+- (void)setWidth:(CGFloat)width;
+
+/**
+ Gets frame height.
+ */
+- (CGFloat)height;
+
+/**
+ Sets frame height.
+ @param height Frame height.
+ */
+- (void)setHeight:(CGFloat)height;
 
 @end

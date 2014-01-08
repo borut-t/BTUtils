@@ -1,7 +1,7 @@
 //
 //  NSData+BTUtils.h
 //
-//  Version 1.2
+//  Version 1.3
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2013 Borut Tomazin

@@ -193,11 +193,27 @@ Returns masked view with rounded corners.
 
 	- (CGSize)size;
 
-Returns view frame size.
+Gets frame size.
 
 	- (void)setSize:(CGSize)size;
 
-Sets view frame size.
+Sets frame size.
+
+	- (CGFloat)width;
+
+Gets frame width.
+
+	- (void)setWidth:(CGFloat)width;
+
+Sets frame width.
+
+	- (CGFloat)height;
+
+Gets frame height.
+
+	- (void)setHeight:(CGFloat)height;
+
+Sets frame height.
 
 
 ### UITabBarController
