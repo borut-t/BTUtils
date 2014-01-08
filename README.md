@@ -2,6 +2,14 @@
 Usable utility methods, categories, macros and helpers to speed up your iOS development.
 
 
+## ARC Support
+BTBadgeView fully supports ARC.
+
+
+## Supported OS
+iOS 5+
+
+
 ## Installation
 Add `pod ‘BTUtils’` to your Podfile or drag class files into your project.
 
@@ -237,11 +245,3 @@ Hides tabBar with/without animation.
 	- (NSUInteger)supportedInterfaceOrientations
 
 	- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
-
-
-## ARC Support
-BTBadgeView fully supports ARC.
-
-
-## Supported OS
-iOS 5+
