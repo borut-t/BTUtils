@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'zlib', :file => 'LICENCE.md' }
   s.author       = 'Borut Tomažin'
   s.platform     = :ios, '5.0'
-  s.source       = { :git => 'https://github.com/borut-t/BTUtils.git', :tag => '1.2' }
+  s.source       = { :git => 'https://github.com/borut-t/BTUtils.git', :tag => '1.3' }
   s.source_files = 'BTUtils/BTUtils.{h,m}'
   s.dependency   'Reachability', '~> 3.1.1'
   s.frameworks   = 'UIKit'
