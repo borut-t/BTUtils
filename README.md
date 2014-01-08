@@ -17,19 +17,19 @@ Add `pod ‘BTUtils’` to your Podfile or drag class files into your project.
 ## Macros
 	RGB(r, g, b)
 
-UIColor on-liner for native colorWithRed method with without alpha.
+UIColor on-liner for native colorWithRed method without alpha.
 
 	RGBA(r, g, b, a)
 
-UIColor on-liner for native colorWithRed method with specified alpha.
+UIColor on-liner for native colorWithRed method with alpha.
 
 	SYSTEM_VERSION_GREATER_OR_EQUAL_TO(v)
 
-Check if system version is greater than or equal to specific string version.
+Checks if system version is greater than or equal to specific string version.
 
 	BSLog(format, …)
 
-Drop-in replacement for standard NSLog.
+Drop-in replacement for standard NSLog with much nicer console output.
 
 
 ## Methods
