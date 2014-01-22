@@ -167,6 +167,10 @@ char *NewBase64Encode(const void *buffer, size_t length, bool separateLines,size
 
 - (NSString *)base64EncodedString
 {
+    if ([self respondsToSelector:@selector(base64EncodedStringWithOptions:)]) {
+        return [self base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    }
+    
 	size_t outputLength = 0;
 	char *outputBuffer = NewBase64Encode([self bytes], [self length], true, &outputLength);
 	
