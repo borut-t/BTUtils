@@ -143,7 +143,7 @@ Returns url encoded string.
 
 	- (NSString *)trim;
 
-Trims leading and trailing whitespaces from given string.
+Trims leading and trailing whitespace and newline characters from a given string.
 
 	- (NSData *)dataFromBase64String;
 
