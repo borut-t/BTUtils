@@ -50,10 +50,18 @@
 - (UIImage *)imageByScalingAndCroppingForSize:(CGSize)targetSize;
 
 /**
- Returns image given with opacity.
+ Returns given image with opacity.
  
  @param alpha An alpha value set for opacity.
  */
 - (UIImage *)imageByApplyingAlpha:(CGFloat)alpha;
+
+/**
+ Returns given image with shadow.
+ 
+ @param size A width of the shadow.
+ @param color Shadow color.
+ */
+- (UIImage *)imageWithShadowSize:(CGFloat)size shadowColor:(UIColor *)color;
 
 @end

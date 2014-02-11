@@ -137,18 +137,39 @@
     
     CGContextScaleCTM(ctx, 1, -1);
     CGContextTranslateCTM(ctx, 0, -area.size.height);
-    
     CGContextSetBlendMode(ctx, kCGBlendModeMultiply);
-    
     CGContextSetAlpha(ctx, alpha);
-    
     CGContextDrawImage(ctx, area, self.CGImage);
     
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-    
     UIGraphicsEndImageContext();
     
     return newImage;
+}
+
+- (UIImage *)imageWithShadowSize:(CGFloat)size shadowColor:(UIColor *)color
+{
+    size = size * [UIScreen mainScreen].scale;
+    CGColorSpaceRef colourSpace = CGColorSpaceCreateDeviceRGB();
+    CGContextRef shadowContext = CGBitmapContextCreate(NULL,
+                                                       self.size.width + 2.f*size,
+                                                       self.size.height + 2.f*size,
+                                                       CGImageGetBitsPerComponent(self.CGImage),
+                                                       0,
+                                                       colourSpace,
+                                                       (CGBitmapInfo)kCGImageAlphaPremultipliedLast);
+    CGColorSpaceRelease(colourSpace);
+    
+    CGContextSetShadowWithColor(shadowContext, CGSizeMake(0, 0), size, color.CGColor);
+    CGContextDrawImage(shadowContext, CGRectMake(size, size, self.size.width, self.size.height), self.CGImage);
+    
+    CGImageRef shadowedCGImage = CGBitmapContextCreateImage(shadowContext);
+    CGContextRelease(shadowContext);
+    
+    UIImage *shadowedImage = [UIImage imageWithCGImage:shadowedCGImage];
+    CGImageRelease(shadowedCGImage);
+    
+    return shadowedImage;
 }
 
 @end
