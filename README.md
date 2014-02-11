@@ -137,6 +137,10 @@ Strip HTML tags from HTML string to plain text.
 
 Get index of character within string.
 
+	- (BOOL)containsString:(NSString *)substring;
+
+Returns YES if substring is part of string.
+
 	- (NSString *)urlEncode;
 
 Returns url encoded string.
@@ -188,6 +192,10 @@ Returns scaled image for target size.
 	- (UIImage *)imageByApplyingAlpha:(CGFloat)alpha;
 
 Returns image with given opacity.
+
+	- (UIImage *)imageWithShadowSize:(CGFloat)size shadowColor:(UIColor *)color;
+
+Returns given image with shadow.
 
 
 ### UIView
