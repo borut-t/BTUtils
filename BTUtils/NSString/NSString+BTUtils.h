@@ -61,6 +61,11 @@
 - (NSUInteger)indexOf:(NSString *)string;
 
 /**
+ Returns YES if substring is part of string.
+ */
+- (BOOL)containsString:(NSString *)substring;
+
+/**
  Returns url encoded string.
  */
 - (NSString *)urlEncode;

@@ -162,6 +162,11 @@ void *NewBase64Decode(const char *inputBuffer, size_t length, size_t *outputLeng
     return range.location;
 }
 
+- (BOOL)containsString:(NSString *)substring
+{
+    return [self rangeOfString:substring].location != NSNotFound;
+}
+
 - (NSString *)urlEncode
 {
     return (__bridge_transfer NSString *)CFURLCreateStringByAddingPercentEscapes(NULL,(__bridge_retained CFStringRef)self,NULL,(CFStringRef)@"!*'\"();:@&=+$,/?%#[]% ",kCFStringEncodingUTF8);
@@ -174,6 +179,10 @@ void *NewBase64Decode(const char *inputBuffer, size_t length, size_t *outputLeng
 
 - (NSData *)dataFromBase64String
 {
+//    if ([self respondsToSelector:@selector(base64EncodedDataWithOptions:)]) {
+//        return [self base64EncodedDataWithOptions:NSDataBase64Encoding64CharacterLineLength];
+//    }
+    
 	NSData *data = [self dataUsingEncoding:NSASCIIStringEncoding];
 	size_t outputLength;
 	void *outputBuffer = NewBase64Decode([data bytes], [data length], &outputLength);
