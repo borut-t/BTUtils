@@ -74,4 +74,26 @@
  */
 - (void)setHeight:(CGFloat)height;
 
+/**
+ Gets frame x origin.
+ */
+- (CGFloat)x;
+
+/**
+ Sets frame x origin.
+ @param originX origin.x.
+ */
+- (void)setX:(CGFloat)originX;
+
+/**
+ Gets frame y origin.
+ */
+- (CGFloat)y;
+
+/**
+ Sets frame y origin.
+ @param originY origin.y.
+ */
+- (void)setY:(CGFloat)originY;
+
 @end
