@@ -227,6 +227,22 @@ Gets frame height.
 
 Sets frame height.
 
+	- (CGFloat)x;
+
+Gets frame x origin.
+
+	- (void)setX:(CGFloat)originX;
+
+Sets frame x origin.
+
+	- (CGFloat)y;
+
+Gets frame y origin.
+
+	- (void)setY:(CGFloat)originY;
+
+Sets frame y origin.
+
 
 ### UITabBarController
 	- (void)showTabBarAnimated:(BOOL)animated;
