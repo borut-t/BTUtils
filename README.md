@@ -1,5 +1,13 @@
 ## Purpose
 Usable utility methods, categories, macros and helpers to speed up your iOS development.
+The package contains the following classes:
+- Macros
+—- RGB
+
+
+### Changelog (v1.3.1)
+- Added new frame methods.
+- Categories are now not loaded by default. If you need one, include it in the target class header.
 
 
 ### Installation
