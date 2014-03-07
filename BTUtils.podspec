@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'BTUtils'
-  s.version      = '1.3'
+  s.version      = '1.3.1'
   s.summary      = 'Usable utility methods and categories.'
   s.homepage     = 'https://github.com/borut-t/BTUtils'
   s.license      = { :type => 'zlib', :file => 'LICENCE.md' }
