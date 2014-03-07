@@ -2,16 +2,16 @@
 Usable utility methods, categories, macros and helpers to speed up your iOS development.
 
 
-## ARC Support
+### Installation
+Just add `pod ‘BTUtils’` to your Podfile or drag class files into your project.
+
+
+### ARC Support
 BTBadgeView fully supports ARC.
 
 
-## Supported OS
+### Supported OS
 iOS 5+
-
-
-## Installation
-Add `pod ‘BTUtils’` to your Podfile or drag class files into your project.
 
 
 ## Macros
