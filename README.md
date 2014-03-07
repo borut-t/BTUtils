@@ -2,7 +2,10 @@
 Usable utility methods, categories, macros and helpers to speed up your iOS development.
 The package contains the following classes:
 - Macros
-—- RGB
+	- RGB
+	- RGBA
+	- SYSTEM_VERSION_GREATER_OR_EQUAL_TO
+	- BSLog
 
 
 ### Changelog (v1.3.1)
