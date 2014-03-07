@@ -1,7 +1,7 @@
 //
 //  BTUtils.h
 //
-//  Version 1.3
+//  Version 1.3.1
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2013 Borut Tomazin
@@ -32,16 +32,17 @@
 
 #import <UIKit/UIKit.h>
 #import "Reachability.h"
-#import "NSString+BTUtils.h"
-#import "NSData+BTUtils.h"
-#import "UIImage+BTUtils.h"
-#import "UIView+BTUtils.h"
-#import "UINavigationController+BTUtils.h"
-#import "UITabBarController+BTUtils.h"
+//#import "NSString+BTUtils.h"
+//#import "NSData+BTUtils.h"
+//#import "UIImage+BTUtils.h"
+//#import "UIView+BTUtils.h"
+//#import "UINavigationController+BTUtils.h"
+//#import "UITabBarController+BTUtils.h"
 
 #define RGB(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1]
 #define RGBA(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:a]
 #define SYSTEM_VERSION_GREATER_OR_EQUAL_TO(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define DEVICE_SIZE [[[[UIApplication sharedApplication] keyWindow] rootViewController].view convertRect:[[UIScreen mainScreen] bounds] fromView:nil].size
 
 /**
  Drop-in replacement for standard NSLog
