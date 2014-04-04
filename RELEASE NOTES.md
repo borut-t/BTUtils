@@ -1,3 +1,6 @@
+Version 1.3.2
+- Removed isReachable method. Use AFNetworkReachabilityManager instead.
+
 Version 1.3.1
 - Added new frame methods.
 - Categories are now not loaded by default. If you need one, include it in the target class header.

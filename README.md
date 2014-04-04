@@ -2,9 +2,8 @@
 Usable utility methods, categories, macros and helpers to speed up your iOS development.
 
 
-### Changelog (v1.3.1)
-- Added new frame methods.
-- Categories are now not loaded by default. If you need one, include it in the target class header.
+### Changelog (v1.3.2)
+- Removed isReachable method. Use AFNetworkReachabilityManager instead.
 
 
 ### Installation
@@ -88,10 +87,6 @@ Returns the string representation of a specified CFUUID object.
 	+ (void)showNetworkLoader:(BOOL)show;
 
 Toggles network activity indicator.
-
-	+ (BOOL)isReachable;
-
-Returns status of the internet connection using Reachability class.
 
 	+ (NSString *)resourcePath:(NSString *)name;
 

@@ -1,7 +1,7 @@
 //
 //  BTUtils.h
 //
-//  Version 1.3.1
+//  Version 1.3.2
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2013 Borut Tomazin
@@ -31,7 +31,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Reachability.h"
 //#import "NSString+BTUtils.h"
 //#import "NSData+BTUtils.h"
 //#import "UIImage+BTUtils.h"
@@ -122,11 +121,6 @@
  @param show A toggle boolean value defining network loader visibility.
  */
 + (void)showNetworkLoader:(BOOL)show;
-
-/**
- Returns status of the internet connection using Reachability class.
- */
-+ (BOOL)isReachable;
 
 /**
  Returns resource path for selected file name.

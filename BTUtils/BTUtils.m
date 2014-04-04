@@ -1,7 +1,7 @@
 //
 //  BTUtils.m
 //
-//  Version 1.3.1
+//  Version 1.3.2
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2013 Borut Tomazin
@@ -110,11 +110,6 @@
 + (void)showNetworkLoader:(BOOL)show
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = show;
-}
-
-+ (BOOL)isReachable
-{
-    return !([[Reachability reachabilityForInternetConnection] currentReachabilityStatus] == NotReachable);
 }
 
 + (NSString *)resourcePath:(NSString *)name
