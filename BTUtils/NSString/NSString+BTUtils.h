@@ -81,6 +81,11 @@
 - (NSData *)dataFromBase64String;
 
 /**
+ Returns UTF8 hexadecimal representation of string.
+ */
+- (NSString *)hexValue;
+
+/**
  Adds new param with value to the existing url with correct formatting.
  
  @param param A url path parameter.

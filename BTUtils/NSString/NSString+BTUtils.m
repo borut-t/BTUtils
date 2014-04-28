@@ -191,6 +191,23 @@ void *NewBase64Decode(const char *inputBuffer, size_t length, size_t *outputLeng
 	return result;
 }
 
+- (NSString *)hexValue
+{
+    NSUInteger len = [self length];
+    unichar *chars = malloc(len * sizeof(unichar));
+    [self getCharacters:chars];
+    
+    NSMutableString *hexString = [[NSMutableString alloc] init];
+    
+    for(NSUInteger i=0; i<len; i++) {
+        [hexString appendFormat:@"%02x", chars[i]];
+    }
+    
+    free(chars);
+    
+    return hexString;
+}
+
 - (NSString *)addUrlParam:(NSString *)param withValue:(NSString *)value
 {
     NSString *pathSpecifier = @"?";
