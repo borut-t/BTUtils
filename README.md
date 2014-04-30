@@ -153,6 +153,10 @@ Trims leading and trailing whitespace and newline characters from a given string
 
 Creates an NSData object containing the base64 decoded representation of the base64 string.
 
+	- (NSString *)hexValue;
+
+Returns UTF8 hexadecimal representation of string.
+
 	- (NSString *)addUrlParam:(NSString *)param withValue:(NSString *)value;
 
 Adds new param with value to the existing url with correct formatting.
