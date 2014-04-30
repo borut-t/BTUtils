@@ -1,3 +1,6 @@
+Version 1.3.3
+- Added hexValue method.
+
 Version 1.3.2
 - Removed isReachable method. Use AFNetworkReachabilityManager instead.
 
