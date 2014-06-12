@@ -52,15 +52,15 @@
         
         CGMutablePathRef path = CGPathCreateMutable();
         CGPathMoveToPoint(path, nil, minx, midy);
-        CGPathAddArcToPoint(path, nil, minx, miny, midx, miny, (corners & UIViewRoundedCornerUpperLeft) ? radius : 0);
-        CGPathAddArcToPoint(path, nil, maxx, miny, maxx, midy, (corners & UIViewRoundedCornerUpperRight) ? radius : 0);
-        CGPathAddArcToPoint(path, nil, maxx, maxy, midx, maxy, (corners & UIViewRoundedCornerLowerRight) ? radius : 0);
-        CGPathAddArcToPoint(path, nil, minx, maxy, minx, midy, (corners & UIViewRoundedCornerLowerLeft) ? radius : 0);
+        CGPathAddArcToPoint(path, nil, minx, miny, midx, miny, (corners & UIRectCornerTopLeft) ? radius : 0);
+        CGPathAddArcToPoint(path, nil, maxx, miny, maxx, midy, (corners & UIRectCornerTopRight) ? radius : 0);
+        CGPathAddArcToPoint(path, nil, maxx, maxy, midx, maxy, (corners & UIRectCornerBottomRight) ? radius : 0);
+        CGPathAddArcToPoint(path, nil, minx, maxy, minx, midy, (corners & UIRectCornerBottomLeft) ? radius : 0);
         CGPathCloseSubpath(path);
         
         CAShapeLayer *maskLayer = [CAShapeLayer layer];
         maskLayer.path = path;
-        self.layer = maskLayer;
+        self.layer.mask = maskLayer;
         
         CFRelease(path);
     }
