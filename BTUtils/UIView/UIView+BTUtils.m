@@ -1,7 +1,7 @@
 //
 //  NSData+BTUtils.h
 //
-//  Version 1.3.1
+//  Version 1.3.4
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2013 Borut Tomazin
@@ -37,28 +37,32 @@
 
 - (void)maskRoundCorners:(UIRectCorner)corners radius:(CGFloat)radius
 {
-    // To round all corners, we can just set the radius on the layer
     if (corners == UIRectCornerAllCorners) {
         self.layer.cornerRadius = radius;
         self.layer.masksToBounds = YES;
     }
     else {
-        // If we want to choose which corners we want to mask then
-        // it is necessary to create a mask layer.
+        CGRect rect = self.bounds;
+        CGFloat minx = CGRectGetMinX(rect);
+        CGFloat midx = CGRectGetMidX(rect);
+        CGFloat maxx = CGRectGetMaxX(rect);
+        CGFloat miny = CGRectGetMinY(rect);
+        CGFloat midy = CGRectGetMidY(rect);
+        CGFloat maxy = CGRectGetMaxY(rect);
         
-        // Create a CAShapeLayer
-        CAShapeLayer *mask = [CAShapeLayer layer];
+        CGMutablePathRef path = CGPathCreateMutable();
+        CGPathMoveToPoint(path, nil, minx, midy);
+        CGPathAddArcToPoint(path, nil, minx, miny, midx, miny, (corners & UIViewRoundedCornerUpperLeft) ? radius : 0);
+        CGPathAddArcToPoint(path, nil, maxx, miny, maxx, midy, (corners & UIViewRoundedCornerUpperRight) ? radius : 0);
+        CGPathAddArcToPoint(path, nil, maxx, maxy, midx, maxy, (corners & UIViewRoundedCornerLowerRight) ? radius : 0);
+        CGPathAddArcToPoint(path, nil, minx, maxy, minx, midy, (corners & UIViewRoundedCornerLowerLeft) ? radius : 0);
+        CGPathCloseSubpath(path);
         
-        // Set the frame
-        mask.frame = self.bounds;
+        CAShapeLayer *maskLayer = [CAShapeLayer layer];
+        maskLayer.path = path;
+        self.layer = maskLayer;
         
-        // Set the CGPath from a UIBezierPath
-        mask.path = [UIBezierPath bezierPathWithRoundedRect:mask.bounds byRoundingCorners:corners cornerRadii:CGSizeMake(radius, radius)].CGPath;
-        
-        // Set the fill color
-        mask.fillColor = [UIColor whiteColor].CGColor;
-        
-        self.layer.mask = mask;
+        CFRelease(path);
     }
 }
 
