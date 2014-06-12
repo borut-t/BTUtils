@@ -1,3 +1,6 @@
+Version 1.3.4
+- Fixed maskRoundCorners method on UIView category.
+
 Version 1.3.3
 - Added hexValue method.
 
