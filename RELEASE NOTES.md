@@ -1,3 +1,7 @@
+Version 1.3.5
+- Added two new macros.
+- Modified imageWithRoundedCornersRadius method.
+
 Version 1.3.4
 - Fixed maskRoundCorners method on UIView category.
 
