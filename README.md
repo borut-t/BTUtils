@@ -2,8 +2,9 @@
 Usable utility methods, categories, macros and helpers to speed up your iOS development.
 
 
-### Changelog (v1.3.4)
-- Fixed maskRoundCorners method on UIView category.
+### Changelog (v1.3.5)
+- Added two new macros.
+- Modified imageWithRoundedCornersRadius method.
 
 
 ### Installation
