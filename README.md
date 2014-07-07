@@ -31,6 +31,14 @@ UIColor on-liner for native colorWithRed method with alpha.
 
 Checks if system version is greater than or equal to specific string version.
 
+    RADIANS_TO_DEGREES(radians)
+
+Converts radians to degrees.
+
+    DEGREES_TO_RADIANS(angle)
+
+Converts degrees to radians.
+
 	BSLog(format, …)
 
 Drop-in replacement for standard NSLog with much nicer console output.
