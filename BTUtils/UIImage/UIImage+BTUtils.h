@@ -1,7 +1,7 @@
 //
 //  UIImage+BTUtils.h
 //
-//  Version 1.3
+//  Version 1.3.5
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2013 Borut Tomazin
@@ -38,9 +38,10 @@
  Returns image with rounded corners and border color.
  
  @param radius A radis to apply to round corners.
- @param borderColor A color to apply to border.
+ @param fillColor (optional) A color to apply for the background (when image is transparent)
+ @param borderColor (optional) A color to apply to border.
  */
-- (UIImage *)imageWithRoundedCornersRadius:(float)radius andBorderColor:(UIColor *)borderColor;
+- (UIImage *)imageWithRoundedCornersRadius:(CGFloat)radius fillColor:(UIColor *)fillColor borderColor:(UIColor *)borderColor;
 
 /**
  Returns scaled image for target size.

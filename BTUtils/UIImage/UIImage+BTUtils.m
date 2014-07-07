@@ -1,7 +1,7 @@
 //
 //  UIImage+BTUtils.m
 //
-//  Version 1.3
+//  Version 1.3.5
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2013 Borut Tomazin
@@ -34,20 +34,26 @@
 
 @implementation UIImage (BTUtils)
 
-- (UIImage *)imageWithRoundedCornersRadius:(float)radius andBorderColor:(UIColor *)borderColor
+- (UIImage *)imageWithRoundedCornersRadius:(CGFloat)radius fillColor:(UIColor *)fillColor borderColor:(UIColor *)borderColor
 {
-    // Begin a new image that will be the new image with the rounded corners
+    // begin a new image that will be the new image with the rounded corners
     UIGraphicsBeginImageContextWithOptions(self.size, NO, 0.0);
     
-    // Add a clip before drawing anything, in the shape of an rounded rect
+    // add a clip before drawing anything, in the shape of an rounded rect
     CGRect rect = CGRectMake(0, 0, self.size.width, self.size.height);
     UIBezierPath *bezier = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:radius];
     [bezier addClip];
     
-    // Draw your image
+    // fill background if color is set
+    if (fillColor != nil) {
+        [fillColor setFill];
+        [bezier fill];
+    }
+    
+    // draw your image
     [self drawInRect:rect];
     
-    //draw border if color is set
+    // draw border if color is set
     if (borderColor != nil) {
         CGContextRef context = UIGraphicsGetCurrentContext();
         CGPathRef bezierPath = [bezier CGPath];
@@ -59,10 +65,10 @@
         CGContextRestoreGState(context);
     }
     
-    // Get the image, here setting the UIImageView image
+    // get the image
     UIImage *roundedImage = UIGraphicsGetImageFromCurrentImageContext();
     
-    // Lets forget about that we were drawing
+    // lets forget about that we were drawing
     UIGraphicsEndImageContext();
     
     return roundedImage;
