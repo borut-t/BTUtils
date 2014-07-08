@@ -1,7 +1,7 @@
 //
 //  NSData+BTUtils.h
 //
-//  Version 1.3.4
+//  Version 1.3.6
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2013 Borut Tomazin
@@ -40,6 +40,12 @@
  @param radius A radius value applied to mask.
  */
 - (void)maskRoundCorners:(UIRectCorner)corners radius:(CGFloat)radius;
+
+/**
+ Returns dashed line/view.
+ @param color A color to apply to dashes.
+ */
+- (void)dashedLineWithColor:(UIColor *)color;
 
 /**
  Gets frame size.

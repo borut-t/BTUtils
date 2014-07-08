@@ -1,7 +1,7 @@
 //
 //  NSData+BTUtils.h
 //
-//  Version 1.3.4
+//  Version 1.3.6
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2013 Borut Tomazin
@@ -64,6 +64,27 @@
         
         CFRelease(path);
     }
+}
+
+- (void)dashedLineWithColor:(UIColor *)color
+{
+    self.backgroundColor = [UIColor clearColor];
+    
+    UIBezierPath *dashPath = [UIBezierPath bezierPath];
+    [dashPath moveToPoint:CGPointMake(0.f, self.height/2.f)];
+    [dashPath addLineToPoint:CGPointMake(self.width, self.height/2.f)];
+    
+    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+    shapeLayer.strokeColor = color.CGColor;
+    shapeLayer.lineWidth = self.height;
+    shapeLayer.lineJoin = kCALineJoinMiter;
+    shapeLayer.lineDashPattern = @[@1, @1];
+    shapeLayer.path = dashPath.CGPath;
+    
+    if (self.layer.sublayers.count > 0) {
+        [self.layer.sublayers[0] removeFromSuperlayer];
+    }
+    [self.layer addSublayer:shapeLayer];
 }
 
 - (CGSize)size
