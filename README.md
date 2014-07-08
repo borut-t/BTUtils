@@ -2,9 +2,8 @@
 Usable utility methods, categories, macros and helpers to speed up your iOS development.
 
 
-### Changelog (v1.3.5)
-- Added two new macros.
-- Modified imageWithRoundedCornersRadius method.
+### Changelog (v1.3.6)
+- Added new method dashedLineWithColor in UIView category.
 
 
 ### Installation
@@ -215,6 +214,10 @@ Returns given image with shadow.
 	- (void)maskRoundCorners:(UIRectCorner)corners radius:(CGFloat)radius;
 
 Returns masked view with rounded corners.
+
+    - (void)dashedLineWithColor:(UIColor *)color;
+
+Returns dashed line/view.
 
 	- (CGSize)size;
 
