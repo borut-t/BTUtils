@@ -1,3 +1,6 @@
+Version 1.3.6
+- Added new method dashedLineWithColor in UIView category.
+
 Version 1.3.5
 - Added two new macros.
 - Modified imageWithRoundedCornersRadius method.
