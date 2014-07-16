@@ -2,8 +2,8 @@
 Usable utility methods, categories, macros and helpers to speed up your iOS development.
 
 
-### Changelog (v1.3.6)
-- Added new method dashedLineWithColor in UIView category.
+### Changelog (v1.3.7)
+- Fixed UIView category frame methods.
 
 
 ### Installation
