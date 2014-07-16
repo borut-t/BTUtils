@@ -1,7 +1,7 @@
 //
 //  NSData+BTUtils.h
 //
-//  Version 1.3.6
+//  Version 1.3.7
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2013 Borut Tomazin
@@ -89,62 +89,62 @@
 
 - (CGSize)size
 {
-    return self.frame.size;
+    return self.bounds.size;
 }
 
 - (void)setSize:(CGSize)size
 {
-    CGRect frame = self.frame;
+    CGRect frame = self.bounds;
     frame.size = size;
-    self.frame = frame;
+    self.bounds = frame;
 }
 
 - (CGFloat)width
 {
-    return CGRectGetWidth(self.frame);
+    return CGRectGetWidth(self.bounds);
 }
 
 - (void)setWidth:(CGFloat)width
 {
-    CGRect frame = self.frame;
+    CGRect frame = self.bounds;
     frame.size.width = width;
-    self.frame = frame;
+    self.bounds = frame;
 }
 
 - (CGFloat)height
 {
-    return CGRectGetHeight(self.frame);
+    return CGRectGetHeight(self.bounds);
 }
 
 - (void)setHeight:(CGFloat)height
 {
-    CGRect frame = self.frame;
+    CGRect frame = self.bounds;
     frame.size.height = height;
-    self.frame = frame;
+    self.bounds = frame;
 }
 
 - (CGFloat)x;
 {
-    return CGRectGetMinX(self.frame);
+    return CGRectGetMinX(self.bounds);
 }
 
 - (void)setX:(CGFloat)originX
 {
-    CGRect frame = self.frame;
+    CGRect frame = self.bounds;
     frame.origin.x = originX;
-    self.frame = frame;
+    self.bounds = frame;
 }
 
 - (CGFloat)y
 {
-    return CGRectGetMinY(self.frame);
+    return CGRectGetMinY(self.bounds);
 }
 
 - (void)setY:(CGFloat)originY
 {
-    CGRect frame = self.frame;
+    CGRect frame = self.bounds;
     frame.origin.y = originY;
-    self.frame = frame;
+    self.bounds = frame;
 }
 
 @end
