@@ -2,7 +2,7 @@
 Usable utility methods, categories, macros and helpers to speed up your iOS development.
 
 
-### Changelog (v1.3.7)
+### Changelog (v1.3.8)
 - Fixed UIView category frame methods.
 
 
