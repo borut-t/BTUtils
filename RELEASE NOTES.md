@@ -1,3 +1,6 @@
+Version 1.3.7
+- Fixed UIView category frame methods.
+
 Version 1.3.6
 - Added new method dashedLineWithColor in UIView category.
 
