@@ -1,3 +1,6 @@
+Version 1.3.9
+- Added RTL language detection method.
+
 Version 1.3.8
 - Fixed UIView category frame methods.
 

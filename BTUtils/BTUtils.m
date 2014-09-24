@@ -1,7 +1,7 @@
 //
 //  BTUtils.m
 //
-//  Version 1.3.5
+//  Version 1.3.9
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2013 Borut Tomazin
@@ -90,6 +90,11 @@
         return [[UIScreen mainScreen] scale] == 2.0 ? YES : NO;
     }
     return NO;
+}
+
++ (BOOL)isRTL
+{
+    return [UIApplication sharedApplication].userInterfaceLayoutDirection == UIUserInterfaceLayoutDirectionRightToLeft;
 }
 
 + (NSString *)CFUUID

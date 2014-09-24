@@ -2,8 +2,8 @@
 Usable utility methods, categories, macros and helpers to speed up your iOS development.
 
 
-### Changelog (v1.3.8)
-- Fixed UIView category frame methods.
+### Changelog (v1.3.9)
+- Added RTL language detection method.
 
 
 ### Installation

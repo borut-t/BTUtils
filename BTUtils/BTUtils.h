@@ -1,7 +1,7 @@
 //
 //  BTUtils.h
 //
-//  Version 1.3.5
+//  Version 1.3.9
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2013 Borut Tomazin
@@ -108,6 +108,11 @@
  Returns YES if device screen has retina resolution.
  */
 + (BOOL)isRetina;
+
+/** 
+ Returns YES if right-to-left system language is set.
+ */
++ (BOOL)isRTL;
 
 /**
  Returns the string representation of a specified CFUUID object.
