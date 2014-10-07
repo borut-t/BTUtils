@@ -1,3 +1,6 @@
+Version 1.3.10
+- Added NSString category method "isURLValid".
+
 Version 1.3.9
 - Added RTL language detection method.
 
