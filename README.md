@@ -2,8 +2,8 @@
 Usable utility methods, categories, macros and helpers to speed up your iOS development.
 
 
-### Changelog (v1.3.9)
-- Added RTL language detection method.
+### Changelog (v1.3.10)
+- Added NSString category method "isURLValid".
 
 
 ### Installation
@@ -183,7 +183,11 @@ Returns text bounds size for specified text in predicted field.
 
 	- (BOOL)isEmailValid;
 
-Returns boolean whenever email is valid or not.
+Returns BOOL whenever email is valid or not.
+
+    - (BOOL)isURLValid;
+
+Returns BOOL whenever URL is valid or not.
 
 
 ### NSData
