@@ -1,7 +1,7 @@
 //
 //  NSString+BTUtils.h
 //
-//  Version 1.3.3
+//  Version 1.3.10
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2013 Borut Tomazin
@@ -102,10 +102,11 @@
  */
 - (CGSize)textSizeWithFont:(UIFont *)font fieldSize:(CGSize)size;
 
-/**
- Returns boolean whenever email is valid or not.
- */
+/** Returns BOOL whenever email is valid or not. */
 - (BOOL)isEmailValid;
+
+/** Returns BOOL whenever URL is valid or not. */
+- (BOOL)isURLValid;
 
 
 

@@ -1,7 +1,7 @@
 //
 //  NSString+BTUtils.m
 //
-//  Version 1.3.3
+//  Version 1.3.10
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2013 Borut Tomazin
@@ -240,6 +240,13 @@ void *NewBase64Decode(const char *inputBuffer, size_t length, size_t *outputLeng
 - (BOOL)isEmailValid
 {
     return [[NSPredicate predicateWithFormat:@"SELF MATCHES %@", @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"] evaluateWithObject:self];
+}
+
+- (BOOL)isURLValid
+{
+    NSString *urlPredicate = @"(http|https)://((\\w)*|([0-9]*)|([-|_])*)+([\\.|/]((\\w)*|([0-9]*)|([-|_])*))+";
+    NSPredicate *urlTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", urlPredicate];
+    return [urlTest evaluateWithObject:self];
 }
 
 
