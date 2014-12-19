@@ -2,7 +2,7 @@ BTUtils
 
 Version 1.0, December 16th, 2013
 
-Copyright (C) 2013 Borut Tomazin
+Copyright (C) 2014 Borut Tomazin
 
 This software is provided 'as-is', without any express or implied
 warranty.  In no event will the authors be held liable for any damages
