@@ -2,9 +2,8 @@
 Usable utility methods, categories, macros and helpers to speed up your iOS development.
 
 
-### Changelog (v1.4)
-- Added traceCallStack and traceCallClassWithDetails method on BTUtils class.
-- Added NSArray category.
+### Changelog (v1.4.1)
+- Added UIColor category.
 
 
 ### Installation
@@ -299,6 +298,12 @@ Sets frame y origin.
     - (NSArray *)reversedArray;
 
 Reverses array values.
+
+
+### UIColor
++ (UIColor *)colorWithHexString:(NSString *)hexString;
+
+Returns color for given from hex color format.
 
 
 ### UITabBarController

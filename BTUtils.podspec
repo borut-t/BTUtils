@@ -1,12 +1,12 @@
 Pod::Spec.new do |s|
   s.name         = 'BTUtils'
-  s.version      = '1.4'
+  s.version      = '1.4.1'
   s.summary      = 'Usable utility methods and categories.'
   s.homepage     = 'https://github.com/borut-t/BTUtils'
   s.license      = { :type => 'zlib', :file => 'LICENCE.md' }
   s.author       = 'Borut Tomažin'
   s.platform     = :ios, '5.0'
-  s.source       = { :git => 'https://github.com/borut-t/BTUtils.git', :tag => '1.4' }
+  s.source       = { :git => 'https://github.com/borut-t/BTUtils.git', :tag => '1.4.1' }
   s.source_files = 'BTUtils/BTUtils.{h,m}'
   s.frameworks   = 'UIKit'
   s.requires_arc = true
@@ -49,5 +49,10 @@ Pod::Spec.new do |s|
   s.subspec 'NSArray' do |s7|
     s7.source_files = 'BTUtils/NSArray/*.{h,m}'
     s7.requires_arc = true
+  end
+
+  s.subspec 'UIColor' do |s8|
+    s8.source_files = 'BTUtils/UIColor/*.{h,m}'
+    s8.requires_arc = true
   end
 end

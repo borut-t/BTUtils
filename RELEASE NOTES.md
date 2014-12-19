@@ -1,3 +1,6 @@
+Version 1.4.1
+- Added UIColor category.
+
 Version 1.4
 - Added traceCallStack and traceCallClassWithDetails method on BTUtils class.
 - Added NSArray category.
