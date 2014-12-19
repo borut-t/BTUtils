@@ -4,7 +4,7 @@
 //  Version 1.3.10
 //
 //  Created by Borut Tomazin on 8/30/2013.
-//  Copyright 2013 Borut Tomazin
+//  Copyright 2014 Borut Tomazin
 //
 //  Distributed under the permissive zlib License
 //  Get the latest version from here:
@@ -219,7 +219,7 @@ void *NewBase64Decode(const char *inputBuffer, size_t length, size_t *outputLeng
 
 - (CGSize)textSizeWithFont:(UIFont *)font fieldSize:(CGSize)size;
 {
-    if (self == nil || [self trim].length == 0) {
+    if (self == nil || [self trim].length == 0 || !font) {
         return CGSizeZero;
     }
     

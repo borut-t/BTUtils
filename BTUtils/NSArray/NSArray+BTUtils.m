@@ -1,9 +1,9 @@
 //
-//  NSData+BTUtils.h
+//  NSArray+BTUtils.m
 //
-//  Version 1.3
+//  Version 1.4
 //
-//  Created by Borut Tomazin on 8/30/2013.
+//  Created by Borut Tomazin on 12/19/2014.
 //  Copyright 2014 Borut Tomazin
 //
 //  Distributed under the permissive zlib License
@@ -30,21 +30,17 @@
 //  3. This notice may not be removed or altered from any source distribution.
 //
 
-#import <Foundation/Foundation.h>
+#import "NSArray+BTUtils.h"
 
-char *NewBase64Encode(
-	const void *inputBuffer,
-	size_t length,
-	bool separateLines,
-	size_t *outputLength
-);
+@implementation NSArray (BTUtils)
 
-@interface NSData (BTUtils)
-
-/**
- Creates an NSString object that contains the base 64 encoding of the receiver's data. 
- Lines are broken at 64 characters long.
- */
-- (NSString *)base64EncodedString;
+- (NSArray *)reversedArray
+{
+    NSMutableArray *reversedArray = [NSMutableArray arrayWithCapacity:self.count];
+    for (id element in [self reverseObjectEnumerator]) {
+        [reversedArray addObject:element];
+    }
+    return [NSArray arrayWithArray:reversedArray];
+}
 
 @end

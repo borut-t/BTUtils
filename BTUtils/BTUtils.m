@@ -1,10 +1,10 @@
 //
 //  BTUtils.m
 //
-//  Version 1.3.9
+//  Version 1.4
 //
 //  Created by Borut Tomazin on 8/30/2013.
-//  Copyright 2013 Borut Tomazin
+//  Copyright 2014 Borut Tomazin
 //
 //  Distributed under the permissive zlib License
 //  Get the latest version from here:
@@ -107,6 +107,32 @@
     }
     
     return [userDefaults objectForKey:@"cfuuid"];
+}
+
+
+
+#pragma mark - Other
++ (NSArray *)traceCallStack
+{
+    return [NSThread callStackSymbols];
+}
+
++ (NSString *)traceCallClassWithDetails:(BOOL)withDetails
+{
+    NSArray *callStack = [NSThread callStackSymbols];
+    if (!withDetails) {
+        NSString *sourceString = [callStack objectAtIndex:1];
+        
+        // try to get caller name, so we can use it for debuging (This might cause performance issues)
+        NSCharacterSet *separatorSet = [NSCharacterSet characterSetWithCharactersInString:@" -[]+?.,"];
+        NSMutableArray *array = [NSMutableArray arrayWithArray:[sourceString componentsSeparatedByCharactersInSet:separatorSet]];
+        [array removeObject:@""];
+        
+        return array[3];
+    }
+    else {
+        return callStack[2];
+    }
 }
 
 

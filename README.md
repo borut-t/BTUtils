@@ -2,8 +2,9 @@
 Usable utility methods, categories, macros and helpers to speed up your iOS development.
 
 
-### Changelog (v1.3.10)
-- Added NSString category method "isURLValid".
+### Changelog (v1.4)
+- Added traceCallStack and traceCallClassWithDetails method on BTUtils class.
+- Added NSArray category.
 
 
 ### Installation
@@ -31,6 +32,10 @@ UIColor on-liner for native colorWithRed method with alpha.
 
 Checks if system version is greater than or equal to specific string version.
 
+    DEVICE_SIZE
+
+Return actual physical device size.
+
     RADIANS_TO_DEGREES(radians)
 
 Converts radians to degrees.
@@ -38,6 +43,22 @@ Converts radians to degrees.
     DEGREES_TO_RADIANS(angle)
 
 Converts degrees to radians.
+
+    IS_NOT_NULL(dictionary, key)
+
+Checks if given key exists in given dict.
+
+    IS_ARRAY(array)
+
+Checks if given array is array.
+
+    IS_DICTIONARY(dict)
+
+Checks if given dictionary is dictionary.
+
+    IS_EMPTY(string)
+
+Checks if given string is nil or zero length.
 
 	BSLog(format, …)
 
@@ -107,6 +128,16 @@ Returns App Store link for selected appId.
 	+ (NSString *)urlEncodedString:(NSString *)string;
 
 Url encodes string.
+
+
+### Other
+    + (NSArray *)traceCallStack;
+
+Call this private instance method from the class you want to trace stack.
+
+    + (NSString *)traceCallClassWithDetails:(BOOL)withDetails;
+
+Call this private instance method from the class you want to trace class.
 
 
 ### Image
@@ -262,6 +293,12 @@ Gets frame y origin.
 	- (void)setY:(CGFloat)originY;
 
 Sets frame y origin.
+
+
+### NSArray
+    - (NSArray *)reversedArray;
+
+Reverses array values.
 
 
 ### UITabBarController

@@ -4,7 +4,7 @@
 //  Version 1.3.5
 //
 //  Created by Borut Tomazin on 8/30/2013.
-//  Copyright 2013 Borut Tomazin
+//  Copyright 2014 Borut Tomazin
 //
 //  Distributed under the permissive zlib License
 //  Get the latest version from here:
@@ -45,21 +45,18 @@
 
 /**
  Returns scaled image for target size.
- 
  @param targetSize Target size to scale image to.
  */
 - (UIImage *)imageByScalingAndCroppingForSize:(CGSize)targetSize;
 
 /**
  Returns given image with opacity.
- 
  @param alpha An alpha value set for opacity.
  */
 - (UIImage *)imageByApplyingAlpha:(CGFloat)alpha;
 
 /**
  Returns given image with shadow.
- 
  @param size A width of the shadow.
  @param color Shadow color.
  */

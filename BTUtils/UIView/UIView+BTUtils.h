@@ -1,10 +1,10 @@
 //
-//  NSData+BTUtils.h
+//  UIView+BTUtils.h
 //
 //  Version 1.3.8
 //
 //  Created by Borut Tomazin on 8/30/2013.
-//  Copyright 2013 Borut Tomazin
+//  Copyright 2014 Borut Tomazin
 //
 //  Distributed under the permissive zlib License
 //  Get the latest version from here:

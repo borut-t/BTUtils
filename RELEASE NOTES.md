@@ -1,3 +1,7 @@
+Version 1.4
+- Added traceCallStack and traceCallClassWithDetails method on BTUtils class.
+- Added NSArray category.
+
 Version 1.3.10
 - Added NSString category method "isURLValid".
 

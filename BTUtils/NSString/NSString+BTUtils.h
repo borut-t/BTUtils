@@ -4,7 +4,7 @@
 //  Version 1.3.10
 //
 //  Created by Borut Tomazin on 8/30/2013.
-//  Copyright 2013 Borut Tomazin
+//  Copyright 2014 Borut Tomazin
 //
 //  Distributed under the permissive zlib License
 //  Get the latest version from here:
@@ -38,56 +38,38 @@
 
 @interface NSString (BTUtils)
 
-/**
- Decode all HTML entities using GTM.
- */
+/** Decode all HTML entities using GTM. */
 - (NSString *)stringByDecodingHTMLEntities;
 
-/**
- Encode all HTML entities using GTM
- */
+/** Encode all HTML entities using GTM */
 - (NSString *)stringByEncodingHTMLEntities;
 
-/**
- Strip HTML tags from HTML string to plain text.
- */
+/** Strip HTML tags from HTML string to plain text. */
 - (NSString *)stringByConvertingHTMLToPlainText;
 
 /**
  Get index of character within string.
- 
  @param string A string to get position index from.
  */
 - (NSUInteger)indexOf:(NSString *)string;
 
-/**
- Returns YES if substring is part of string.
- */
+/** Returns YES if substring is part of string. */
 - (BOOL)containsString:(NSString *)substring;
 
-/**
- Returns url encoded string.
- */
+/** Returns url encoded string. */
 - (NSString *)urlEncode;
 
-/**
- Trims leading and trailing whitespace and newline characters from a given string.
- */
+/** Trims leading and trailing whitespace and newline characters from a given string. */
 - (NSString *)trim;
 
-/**
- Creates an NSData object containing the base64 decoded representation of the base64 string.
- */
+/** Creates an NSData object containing the base64 decoded representation of the base64 string. */
 - (NSData *)dataFromBase64String;
 
-/**
- Returns UTF8 hexadecimal representation of string.
- */
+/** Returns UTF8 hexadecimal representation of string. */
 - (NSString *)hexValue;
 
 /**
  Adds new param with value to the existing url with correct formatting.
- 
  @param param A url path parameter.
  @param value A url path value.
  */
@@ -95,7 +77,6 @@
 
 /**
  Returns text bounds size for specified text in predicted field.
- 
  @param text A text to calculate bounds from.
  @param font A font to apply to text.
  @param size A bounds field size.
@@ -111,14 +92,10 @@
 
 
 #pragma mark - Crypto
-/**
- MD5 crypto hash.
- */
+/** MD5 crypto hash. */
 - (NSString *)MD5;
 
-/**
- SHA1 crypto hash.
- */
+/** SHA1 crypto hash. */
 - (NSString *)SHA1;
 
 @end

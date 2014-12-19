@@ -1,10 +1,10 @@
 //
 //  BTUtils.h
 //
-//  Version 1.3.9
+//  Version 1.4
 //
 //  Created by Borut Tomazin on 8/30/2013.
-//  Copyright 2013 Borut Tomazin
+//  Copyright 2014 Borut Tomazin
 //
 //  Distributed under the permissive zlib License
 //  Get the latest version from here:
@@ -35,117 +35,110 @@
 //#import "NSData+BTUtils.h"
 //#import "UIImage+BTUtils.h"
 //#import "UIView+BTUtils.h"
+//#import "NSArray+BTUtils.h"
 //#import "UINavigationController+BTUtils.h"
 //#import "UITabBarController+BTUtils.h"
 
+/** UIColor on-liner for native colorWithRed method without alpha. */
 #define RGB(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1]
+/** UIColor on-liner for native colorWithRed method with alpha. */
 #define RGBA(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:a]
+/** Checks if system version is greater than or equal to specific string version. */
 #define SYSTEM_VERSION_GREATER_OR_EQUAL_TO(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+/** Return actual physical device size. */
 #define DEVICE_SIZE [[[[UIApplication sharedApplication] keyWindow] rootViewController].view convertRect:[[UIScreen mainScreen] bounds] fromView:nil].size
+/** Converts radians to degrees. */
 #define RADIANS_TO_DEGREES(radians) ((radians) * (180.0 / M_PI))
+/** Converts degrees to radians. */
 #define DEGREES_TO_RADIANS(angle) ((angle) / 180.0 * M_PI)
+/** Checks if given key exists in given dict. */
+#define IS_NOT_NULL(dictionary, key) ([dictionary objectForKey:key] && ![[dictionary objectForKey:key] isKindOfClass:[NSNull class]])
+/** Checks if given array is array. */
+#define IS_ARRAY(array) ([array isKindOfClass:[NSArray class]])
+/** Checks if given dictionary is dictionary. */
+#define IS_DICTIONARY(dict) (![dict isKindOfClass:[NSNull class]] || ![dict isKindOfClass:[NSDictionary class]])
+/** Checks if given string is nil or zero length. */
+#define IS_EMPTY(string) (string == nil || [string isKindOfClass:[NSNull class]] || [(NSString *)string length] == 0 || [(NSString *)string isEqualToString:@"null"])
 
-/**
- Drop-in replacement for standard NSLog
- */
+/** Drop-in replacement for standard NSLog. */
 #ifdef DEBUG
-#	define BSLog(format, ...) NSLog((@"%s[%d] " format), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+    #define BSLog(format, ...) NSLog((@"%s[%d] " format), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
 #else
-#	define BSLog(...)
+    #define BSLog(...)
 #endif
 
 
 @interface BTUtils : NSObject
 
-
 #pragma mark - Device
-/**
- Returns the current version of the operating system.
- */
+/** Returns the current version of the operating system. */
 + (NSString *)OSVersion;
 
-/**
- Returns app version string using key 'CFBundleShortVersionString'.
- */
+/** Returns app version string using key 'CFBundleShortVersionString'. */
 + (NSString *)appVersion;
 
-/**
- Returns app build string using key 'CFBundleVersion'.
- */
+/** Returns app build string using key 'CFBundleVersion'. */
 + (NSString *)appBuild;
 
-/**
- Returns device model.
- */
+/** Returns device model. */
 + (NSString *)deviceModel;
 
-/**
- Returns screen size.
- */
+/** Returns screen size. */
 + (CGSize)screenSize;
 
-/**
- Returns interface orienation.
- */
+/** Returns interface orienation. */
 + (UIInterfaceOrientation)orientation;
 
-/**
- Returns YES when UIUserInterfaceIdiom is Pad.
- */
+/** Returns YES when UIUserInterfaceIdiom is Pad. */
 + (BOOL)isPad;
 
-/**
- Returns YES when UIUserInterfaceIdiom is Phone.
- */
+/** Returns YES when UIUserInterfaceIdiom is Phone. */
 + (BOOL)isPhone;
 
-/**
- Returns YES if device is phone and 4inch (a.k.a. iPhone 5/5s/5c).
- */
+/** Returns YES if device is phone and 4inch (a.k.a. iPhone 5/5s/5c). */
 + (BOOL)isPhone4Inch;
 
-/**
- Returns YES if device screen has retina resolution.
- */
+/** Returns YES if device screen has retina resolution. */
 + (BOOL)isRetina;
 
-/** 
- Returns YES if right-to-left system language is set.
- */
+/**  Returns YES if right-to-left system language is set. */
 + (BOOL)isRTL;
 
-/**
- Returns the string representation of a specified CFUUID object.
- */
+/** Returns the string representation of a specified CFUUID object. */
 + (NSString *)CFUUID;
+
+
+
+#pragma mark - Other
+/** Call this private instance method from the class you want to trace stack. */
++ (NSArray *)traceCallStack;
+
+/** Call this private instance method from the class you want to trace class. */
++ (NSString *)traceCallClassWithDetails:(BOOL)withDetails;
 
 
 
 #pragma mark - Network
 /**
  Toggles network activity indicator.
- 
  @param show A toggle boolean value defining network loader visibility.
  */
 + (void)showNetworkLoader:(BOOL)show;
 
 /**
  Returns resource path for selected file name.
- 
  @param name A file name represented on filesystem.
  */
 + (NSString *)resourcePath:(NSString *)name;
 
 /**
  Returns App Store link for selected appId.
- 
  @param appId And appId to generate App Store link with.
  */
 + (NSString *)appStoreLinkForAppId:(NSString *)appId;
 
 /**
  Url encodes string.
- 
  @param string An input string to be url encoded.
  */
 + (NSString *)urlEncodedString:(NSString *)string;
@@ -155,14 +148,12 @@
 #pragma mark - Image
 /**
  Returns uncached image from filesystem.
- 
  @param name An image name to be loaded from the filesystem.
  */
 + (UIImage *)imageNamed:(NSString *)name;
 
 /**
  Generates new UIImage for selected color and size.
- 
  @param color UIColor of the target image.
  @param size CGSize of the target image.
  */
@@ -170,7 +161,6 @@
 
 /**
  Captures screen for selected view.
- 
  @param view View that is going to be captured.
  @return View screenshot.
  */
@@ -178,12 +168,10 @@
 
 /**
  Captures frame inside selected view.
- 
  @param frame Frame that is going to be captured.
  @param view View hosting frame.
  @return View frame screenshot.
  */
 + (UIImage *)captureFrame:(CGRect)frame inView:(UIView *)view;
-
 
 @end
