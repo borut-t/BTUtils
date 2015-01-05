@@ -1,3 +1,6 @@
+Version 1.4.2
+- Added CGHorizontalCenterInParent, CGVerticalCenterInParent and CGCenterInParent macros on UIView category.
+
 Version 1.4.1
 - Added UIColor category.
 

@@ -2,8 +2,8 @@
 Usable utility methods, categories, macros and helpers to speed up your iOS development.
 
 
-### Changelog (v1.4.1)
-- Added UIColor category.
+### Changelog (v1.4.2)
+- Added CGHorizontalCenterInParent, CGVerticalCenterInParent and CGCenterInParent macros on UIView category.
 
 
 ### Installation
@@ -11,7 +11,7 @@ Just add `pod ‘BTUtils’` to your Podfile or drag class files into your proje
 
 
 ### ARC Support
-BTBadgeView fully supports ARC.
+BTUtils fully supports ARC.
 
 
 ### Supported OS
@@ -292,6 +292,18 @@ Gets frame y origin.
 	- (void)setY:(CGFloat)originY;
 
 Sets frame y origin.
+
+    static inline CGFloat CGHorizontalCenterInParent(CGRect frame, CGFloat childWidth)
+
+Returns horizontally centered x coordinate for given child width in parent frame.
+
+    static inline CGFloat CGVerticalCenterInParent(CGRect frame, CGFloat childHeight)
+
+Returns vertically centered y coordinate for given child height in parent frame.
+
+    static inline CGRect CGCenterInParent(CGRect parent, CGFloat childWidth, CGFloat childHeight)
+
+Returns centered frame for given child width and height in parent frame.
 
 
 ### NSArray

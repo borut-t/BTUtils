@@ -1,10 +1,10 @@
 //
 //  UIView+BTUtils.h
 //
-//  Version 1.3.8
+//  Version 1.4.2
 //
 //  Created by Borut Tomazin on 8/30/2013.
-//  Copyright 2014 Borut Tomazin
+//  Copyright 2015 Borut Tomazin
 //
 //  Distributed under the permissive zlib License
 //  Get the latest version from here:
@@ -32,6 +32,21 @@
 
 #import <UIKit/UIKit.h>
 
+/** Returns horizontally centered x coordinate for given child width in parent frame. */
+static inline CGFloat CGHorizontalCenterInParent(CGRect frame, CGFloat childWidth) {
+    return frame.size.width / 2 - childWidth / 2;
+}
+
+/** Returns vertically centered y coordinate for given child height in parent frame. */
+static inline CGFloat CGVerticalCenterInParent(CGRect frame, CGFloat childHeight) {
+    return frame.size.height / 2 - childHeight / 2;
+}
+
+/** Returns centered frame for given child width and height in parent frame. */
+static inline CGRect CGCenterInParent(CGRect parent, CGFloat childWidth, CGFloat childHeight) {
+    return CGRectMake(CGHorizontalCenterInParent(parent, childWidth), CGVerticalCenterInParent(parent, childHeight), childWidth, childHeight);
+}
+
 @interface UIView (BTUtils)
 
 /**
@@ -47,9 +62,7 @@
  */
 - (void)dashedLineWithColor:(UIColor *)color;
 
-/**
- Gets frame size.
- */
+/** Gets frame size. */
 - (CGSize)size;
 
 /**
@@ -58,9 +71,7 @@
  */
 - (void)setSize:(CGSize)size;
 
-/**
- Gets frame width.
- */
+/** Gets frame width. */
 - (CGFloat)width;
 
 /**
@@ -69,9 +80,7 @@
  */
 - (void)setWidth:(CGFloat)width;
 
-/**
- Gets frame height.
- */
+/** Gets frame height. */
 - (CGFloat)height;
 
 /**
@@ -80,9 +89,7 @@
  */
 - (void)setHeight:(CGFloat)height;
 
-/**
- Gets frame x origin.
- */
+/** Gets frame x origin. */
 - (CGFloat)x;
 
 /**
