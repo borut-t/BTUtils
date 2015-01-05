@@ -4,7 +4,7 @@
 //  Version 1.4
 //
 //  Created by Borut Tomazin on 8/30/2013.
-//  Copyright 2014 Borut Tomazin
+//  Copyright 2015 Borut Tomazin
 //
 //  Distributed under the permissive zlib License
 //  Get the latest version from here:
