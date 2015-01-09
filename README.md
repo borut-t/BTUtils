@@ -2,8 +2,8 @@
 Usable utility methods, categories, macros and helpers to speed up your iOS development.
 
 
-### Changelog (v1.4.2)
-- Added CGHorizontalCenterInParent, CGVerticalCenterInParent and CGCenterInParent macros on UIView category.
+### Changelog (v1.4.3)
+- Added pulseEffectToSize:duration: method on UIView category.
 
 
 ### Installation
@@ -248,6 +248,10 @@ Returns given image with shadow.
 	- (void)maskRoundCorners:(UIRectCorner)corners radius:(CGFloat)radius;
 
 Returns masked view with rounded corners.
+
+    - (void)pulseEffectToSize:(CGFloat)size duration:(CGFloat)duration;
+
+Add pulse animation to view.
 
     - (void)dashedLineWithColor:(UIColor *)color;
 
