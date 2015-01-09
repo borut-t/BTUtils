@@ -1,7 +1,7 @@
 //
 //  UIView+BTUtils.h
 //
-//  Version 1.4.2
+//  Version 1.4.3
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2015 Borut Tomazin
@@ -64,6 +64,18 @@
         
         CFRelease(path);
     }
+}
+
+- (void)pulseEffectToSize:(CGFloat)size duration:(CGFloat)duration
+{
+    CABasicAnimation *pulseAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    pulseAnimation.duration = duration;
+    pulseAnimation.toValue = [NSNumber numberWithFloat:size];
+    pulseAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    pulseAnimation.autoreverses = YES;
+    pulseAnimation.repeatCount = FLT_MAX;
+    
+    [self.layer addAnimation:pulseAnimation forKey:nil];
 }
 
 - (void)dashedLineWithColor:(UIColor *)color

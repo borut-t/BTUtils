@@ -1,7 +1,7 @@
 //
 //  UIView+BTUtils.h
 //
-//  Version 1.4.2
+//  Version 1.4.3
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2015 Borut Tomazin
@@ -55,6 +55,13 @@ static inline CGRect CGCenterInParent(CGRect parent, CGFloat childWidth, CGFloat
  @param radius A radius value applied to mask.
  */
 - (void)maskRoundCorners:(UIRectCorner)corners radius:(CGFloat)radius;
+
+/** 
+ Add pulse animation to view. 
+ @param size Scale max size to pulse to.
+ @param duration The duration of one pulse transformation.
+ */
+- (void)pulseEffectToSize:(CGFloat)size duration:(CGFloat)duration;
 
 /**
  Returns dashed line/view.
