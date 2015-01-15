@@ -1,3 +1,6 @@
+Version 1.4.4
+- Added spinWithDuration:direction: method on UIView category.
+
 Version 1.4.3
 - Added pulseEffectToSize:duration: method on UIView category.
 
