@@ -2,8 +2,8 @@
 Usable utility methods, categories, macros and helpers to speed up your iOS development.
 
 
-### Changelog (v1.4.3)
-- Added pulseEffectToSize:duration: method on UIView category.
+### Changelog (v1.4.4)
+- Added spinWithDuration:direction: method on UIView category.
 
 
 ### Installation
@@ -252,6 +252,10 @@ Returns masked view with rounded corners.
     - (void)pulseEffectToSize:(CGFloat)size duration:(CGFloat)duration;
 
 Add pulse animation to view.
+
+    - (void)spinWithDuration:(CFTimeInterval)duration direction:(SpinDirection)direction;
+
+Spin view's layer.
 
     - (void)dashedLineWithColor:(UIColor *)color;
 
