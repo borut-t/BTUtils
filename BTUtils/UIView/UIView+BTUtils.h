@@ -1,7 +1,7 @@
 //
 //  UIView+BTUtils.h
 //
-//  Version 1.4.4
+//  Version 1.4.5
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2015 Borut Tomazin
@@ -71,7 +71,7 @@ typedef NS_ENUM(NSUInteger, SpinDirection) {
 
 /** 
  Spin view's layer.
- @param duration Spin rotation duration.
+ @param duration Spin rotation duration. If 0, animation does not occur.
  @param direction Spin rotation direction.
  */
 - (void)spinWithDuration:(CFTimeInterval)duration direction:(SpinDirection)direction;

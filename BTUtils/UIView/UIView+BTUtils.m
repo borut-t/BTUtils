@@ -1,7 +1,7 @@
 //
 //  UIView+BTUtils.h
 //
-//  Version 1.4.4
+//  Version 1.4.5
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2015 Borut Tomazin
@@ -86,13 +86,13 @@
     rotationAnimation.fillMode = kCAFillModeForwards;
     rotationAnimation.repeatCount = 0;
     rotationAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    rotationAnimation.fromValue = @(0.f);
     rotationAnimation.toValue = @(M_PI * (direction == SpinDirectionClockwise ? 1 : -1));
+    rotationAnimation.fromValue = duration == 0.f ? rotationAnimation.toValue : @(0.f);
     rotationAnimation.duration = duration;
     
     if (self.layer.animationKeys.count > 0) {
         rotationAnimation.fromValue = rotationAnimation.toValue;
-        rotationAnimation.toValue = @(0);
+        rotationAnimation.toValue = duration == 0.f ? rotationAnimation.fromValue : @(0);
         rotationAnimation.duration = duration;
         rotationAnimation.removedOnCompletion = YES;
     }

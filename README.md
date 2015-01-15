@@ -2,8 +2,8 @@
 Usable utility methods, categories, macros and helpers to speed up your iOS development.
 
 
-### Changelog (v1.4.4)
-- Added spinWithDuration:direction: method on UIView category.
+### Changelog (v1.4.5)
+- Fixed spinWithDuration:direction: method duration issue.
 
 
 ### Installation
