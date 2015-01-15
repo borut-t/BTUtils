@@ -1,7 +1,7 @@
 //
 //  UIView+BTUtils.h
 //
-//  Version 1.4.3
+//  Version 1.4.4
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2015 Borut Tomazin
@@ -47,6 +47,12 @@ static inline CGRect CGCenterInParent(CGRect parent, CGFloat childWidth, CGFloat
     return CGRectMake(CGHorizontalCenterInParent(parent, childWidth), CGVerticalCenterInParent(parent, childHeight), childWidth, childHeight);
 }
 
+/** Spin effect directions. */
+typedef NS_ENUM(NSUInteger, SpinDirection) {
+    SpinDirectionClockwise,
+    SpinDirectionCounterClockwise
+};
+
 @interface UIView (BTUtils)
 
 /**
@@ -62,6 +68,13 @@ static inline CGRect CGCenterInParent(CGRect parent, CGFloat childWidth, CGFloat
  @param duration The duration of one pulse transformation.
  */
 - (void)pulseEffectToSize:(CGFloat)size duration:(CGFloat)duration;
+
+/** 
+ Spin view's layer.
+ @param duration Spin rotation duration.
+ @param direction Spin rotation direction.
+ */
+- (void)spinWithDuration:(CFTimeInterval)duration direction:(SpinDirection)direction;
 
 /**
  Returns dashed line/view.

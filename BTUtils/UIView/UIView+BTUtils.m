@@ -1,7 +1,7 @@
 //
 //  UIView+BTUtils.h
 //
-//  Version 1.4.3
+//  Version 1.4.4
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2015 Borut Tomazin
@@ -76,6 +76,28 @@
     pulseAnimation.repeatCount = FLT_MAX;
     
     [self.layer addAnimation:pulseAnimation forKey:nil];
+}
+
+- (void)spinWithDuration:(CFTimeInterval)duration direction:(SpinDirection)direction;
+{
+    CABasicAnimation *rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    rotationAnimation.additive = YES;
+    rotationAnimation.removedOnCompletion = NO;
+    rotationAnimation.fillMode = kCAFillModeForwards;
+    rotationAnimation.repeatCount = 0;
+    rotationAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    rotationAnimation.fromValue = @(0.f);
+    rotationAnimation.toValue = @(M_PI * (direction == SpinDirectionClockwise ? 1 : -1));
+    rotationAnimation.duration = duration;
+    
+    if (self.layer.animationKeys.count > 0) {
+        rotationAnimation.fromValue = rotationAnimation.toValue;
+        rotationAnimation.toValue = @(0);
+        rotationAnimation.duration = duration;
+        rotationAnimation.removedOnCompletion = YES;
+    }
+    
+    [self.layer addAnimation:rotationAnimation forKey:@"spinAnimation"];
 }
 
 - (void)dashedLineWithColor:(UIColor *)color
