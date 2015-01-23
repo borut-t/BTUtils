@@ -1,7 +1,7 @@
 //
 //  BTUtils.h
 //
-//  Version 1.4
+//  Version 1.4.6
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2015 Borut Tomazin
@@ -79,6 +79,9 @@
 
 /** Returns app build string using key 'CFBundleVersion'. */
 + (NSString *)appBuild;
+
+/** Returns app name string using key 'CFBundleDisplayName'. */
++ (NSString *)appName;
 
 /** Returns device model. */
 + (NSString *)deviceModel;

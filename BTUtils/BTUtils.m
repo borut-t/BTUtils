@@ -1,7 +1,7 @@
 //
 //  BTUtils.m
 //
-//  Version 1.4
+//  Version 1.4.6
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2015 Borut Tomazin
@@ -49,6 +49,11 @@
 + (NSString *)appBuild
 {
     return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+}
+
++ (NSString *)appName
+{
+    return [[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"] capitalizedString];
 }
 
 + (NSString *)deviceModel
