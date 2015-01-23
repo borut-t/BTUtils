@@ -2,8 +2,8 @@
 Usable utility methods, categories, macros and helpers to speed up your iOS development.
 
 
-### Changelog (v1.4.5)
-- Fixed spinWithDuration:direction: method duration issue.
+### Changelog (v1.4.6)
+- Added appName method to BTUtils class.
 
 
 ### Installation
@@ -77,6 +77,10 @@ Returns app version string using key 'CFBundleShortVersionString'.
 	+ (NSString *)appBuild;
 
 Returns app build string using key 'CFBundleVersion'.
+
+    + (NSString *)appName;
+
+Returns app name string using key 'CFBundleDisplayName'.
 
 	+ (NSString *)deviceModel;
 

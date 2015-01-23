@@ -1,3 +1,6 @@
+Version 1.4.6
+- Added appName method to BTUtils class.
+
 Version 1.4.5
 - Fixed spinWithDuration:direction: method duration issue.
 
