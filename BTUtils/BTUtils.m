@@ -1,7 +1,7 @@
 //
 //  BTUtils.m
 //
-//  Version 1.4.6
+//  Version 1.4.7
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2015 Borut Tomazin
@@ -79,6 +79,24 @@
 + (BOOL)isPhone
 {
     return (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone);
+}
+
++ (PhoneScreenSize)phoneScreenSize
+{
+    CGSize phoneSize = [self screenSize];
+    if (phoneSize.width == 320.f && phoneSize.height == 480.f) {
+        return PhoneScreenSize3point5Inch;
+    }
+    else if (phoneSize.width == 320.f && phoneSize.height == 568.f) {
+        return PhoneScreenSize4Inch;
+    }
+    else if (phoneSize.width == 375.f && phoneSize.height == 667.f) {
+        return PhoneScreenSize4point7Inch;
+    }
+    else if (phoneSize.width == 414.f && phoneSize.height == 736.f) {
+        return PhoneScreenSize5point5Inch;
+    }
+    return PhoneScreenSizeUndefined;
 }
 
 + (BOOL)isPhone4Inch
@@ -200,7 +218,7 @@
     //iPhone
     else {
         //iPhone 5
-        if ([self isPhone4Inch]) {
+        if ([self phoneScreenSize] == PhoneScreenSize4Inch) {
             fileName = [self resourcePath:[NSString stringWithFormat:@"%@%@.%@", baseName, sufixes[3], ext]];
             if (![fm fileExistsAtPath:fileName]) {
                 fileName = [self resourcePath:name];

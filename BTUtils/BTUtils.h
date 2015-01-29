@@ -1,7 +1,7 @@
 //
 //  BTUtils.h
 //
-//  Version 1.4.6
+//  Version 1.4.7
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2015 Borut Tomazin
@@ -67,6 +67,14 @@
     #define BSLog(...)
 #endif
 
+/** iPhone sizes. */
+typedef NS_ENUM(NSUInteger, PhoneScreenSize) {
+    PhoneScreenSizeUndefined=0,
+    PhoneScreenSize3point5Inch,
+    PhoneScreenSize4Inch,
+    PhoneScreenSize4point7Inch,
+    PhoneScreenSize5point5Inch
+};
 
 @interface BTUtils : NSObject
 
@@ -98,8 +106,11 @@
 /** Returns YES when UIUserInterfaceIdiom is Phone. */
 + (BOOL)isPhone;
 
+/** Returns iPhone screen size. */
++ (PhoneScreenSize)phoneScreenSize;
+
 /** Returns YES if device is phone and 4inch (a.k.a. iPhone 5/5s/5c). */
-+ (BOOL)isPhone4Inch;
++ (BOOL)isPhone4Inch __attribute__((deprecated));
 
 /** Returns YES if device screen has retina resolution. */
 + (BOOL)isRetina;
