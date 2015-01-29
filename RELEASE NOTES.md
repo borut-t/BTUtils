@@ -1,3 +1,7 @@
+Version 1.4.7
+- Added method phoneScreenSize to BTUtils class.
+- Deprecated method isPhone4Inch. Use phoneScreenSize method instead.
+
 Version 1.4.6
 - Added appName method to BTUtils class.
 

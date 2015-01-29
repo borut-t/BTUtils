@@ -2,8 +2,9 @@
 Usable utility methods, categories, macros and helpers to speed up your iOS development.
 
 
-### Changelog (v1.4.6)
-- Added appName method to BTUtils class.
+### Changelog (v1.4.7)
+- Added method phoneScreenSize to BTUtils class.
+- Deprecated method isPhone4Inch. Use phoneScreenSize method instead.
 
 
 ### Installation
@@ -102,7 +103,11 @@ Returns YES when UIUserInterfaceIdiom is Pad.
 
 Returns YES when UIUserInterfaceIdiom is Phone.
 
-	+ (BOOL)isPhone4Inch;
+    + (PhoneScreenSize)phoneScreenSize;
+
+Returns iPhone screen size.
+
+	+ (BOOL)isPhone4Inch; -deprecated
 
 Returns YES if device is phone and 4inch (a.k.a. iPhone 5/5s/5c).
 
