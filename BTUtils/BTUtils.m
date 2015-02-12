@@ -1,7 +1,7 @@
 //
 //  BTUtils.m
 //
-//  Version 1.4.7
+//  Version 1.4.8
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2015 Borut Tomazin
@@ -31,6 +31,7 @@
 //
 
 #import "BTUtils.h"
+#import <objc/runtime.h>
 
 @implementation BTUtils
 
@@ -156,6 +157,26 @@
     else {
         return callStack[2];
     }
+}
+
++ (NSArray *)propertyNamesForObject:(id)object
+{
+    unsigned count;
+    objc_property_t *properties = class_copyPropertyList([object class], &count);
+    
+    NSMutableArray *rv = [NSMutableArray array];
+    
+    unsigned i;
+    for (i = 0; i < count; i++)
+    {
+        objc_property_t property = properties[i];
+        NSString *name = [NSString stringWithUTF8String:property_getName(property)];
+        [rv addObject:name];
+    }
+    
+    free(properties);
+    
+    return rv;
 }
 
 

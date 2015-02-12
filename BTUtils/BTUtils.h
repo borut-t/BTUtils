@@ -1,7 +1,7 @@
 //
 //  BTUtils.h
 //
-//  Version 1.4.7
+//  Version 1.4.8
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2015 Borut Tomazin
@@ -129,6 +129,9 @@ typedef NS_ENUM(NSUInteger, PhoneScreenSize) {
 
 /** Call this private instance method from the class you want to trace class. */
 + (NSString *)traceCallClassWithDetails:(BOOL)withDetails;
+
+/** Returns class property names. */
++ (NSArray *)propertyNamesForObject:(id)object;
 
 
 
