@@ -2,9 +2,8 @@
 Usable utility methods, categories, macros and helpers to speed up your iOS development.
 
 
-### Changelog (v1.4.7)
-- Added method phoneScreenSize to BTUtils class.
-- Deprecated method isPhone4Inch. Use phoneScreenSize method instead.
+### Changelog (v1.4.8)
+- Added method propertyNamesForObject:.
 
 
 ### Installation
@@ -146,6 +145,10 @@ Call this private instance method from the class you want to trace stack.
     + (NSString *)traceCallClassWithDetails:(BOOL)withDetails;
 
 Call this private instance method from the class you want to trace class.
+
+    + (NSArray *)propertyNamesForObject:(id)object;
+
+Returns class property names.
 
 
 ### Image

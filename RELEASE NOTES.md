@@ -1,3 +1,6 @@
+Version 1.4.8
+- Added method propertyNamesForObject:.
+
 Version 1.4.7
 - Added method phoneScreenSize to BTUtils class.
 - Deprecated method isPhone4Inch. Use phoneScreenSize method instead.
