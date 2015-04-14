@@ -1,3 +1,6 @@
+Version 1.4.9
+- Modified UIView category method spinWithDuration:.
+
 Version 1.4.8
 - Added method propertyNamesForObject:.
 
