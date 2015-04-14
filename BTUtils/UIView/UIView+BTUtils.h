@@ -1,7 +1,7 @@
 //
 //  UIView+BTUtils.h
 //
-//  Version 1.4.5
+//  Version 1.4.9
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2015 Borut Tomazin
@@ -47,12 +47,6 @@ static inline CGRect CGCenterInParent(CGRect parent, CGFloat childWidth, CGFloat
     return CGRectMake(CGHorizontalCenterInParent(parent, childWidth), CGVerticalCenterInParent(parent, childHeight), childWidth, childHeight);
 }
 
-/** Spin effect directions. */
-typedef NS_ENUM(NSUInteger, SpinDirection) {
-    SpinDirectionClockwise,
-    SpinDirectionCounterClockwise
-};
-
 @interface UIView (BTUtils)
 
 /**
@@ -72,9 +66,9 @@ typedef NS_ENUM(NSUInteger, SpinDirection) {
 /** 
  Spin view's layer.
  @param duration Spin rotation duration. If 0, animation does not occur.
- @param direction Spin rotation direction.
+ @param angle Spin rotation angle. Positive values animate clockwise, negative counter-clockwise.
  */
-- (void)spinWithDuration:(CFTimeInterval)duration direction:(SpinDirection)direction;
+- (void)spinWithDuration:(CFTimeInterval)duration angle:(CGFloat)angle;
 
 /**
  Returns dashed line/view.

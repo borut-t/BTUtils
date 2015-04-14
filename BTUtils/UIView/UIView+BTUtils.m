@@ -1,7 +1,7 @@
 //
 //  UIView+BTUtils.h
 //
-//  Version 1.4.5
+//  Version 1.4.9
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2015 Borut Tomazin
@@ -78,7 +78,7 @@
     [self.layer addAnimation:pulseAnimation forKey:nil];
 }
 
-- (void)spinWithDuration:(CFTimeInterval)duration direction:(SpinDirection)direction;
+- (void)spinWithDuration:(CFTimeInterval)duration angle:(CGFloat)angle
 {
     CABasicAnimation *rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
     rotationAnimation.additive = YES;
@@ -86,7 +86,7 @@
     rotationAnimation.fillMode = kCAFillModeForwards;
     rotationAnimation.repeatCount = 0;
     rotationAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    rotationAnimation.toValue = @(M_PI * (direction == SpinDirectionClockwise ? 1 : -1));
+    rotationAnimation.toValue = @(angle);
     rotationAnimation.fromValue = duration == 0.f ? rotationAnimation.toValue : @(0.f);
     rotationAnimation.duration = duration;
     
