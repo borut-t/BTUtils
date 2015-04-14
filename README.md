@@ -2,8 +2,8 @@
 Usable utility methods, categories, macros and helpers to speed up your iOS development.
 
 
-### Changelog (v1.4.8)
-- Added method propertyNamesForObject:.
+### Changelog (v1.4.9)
+- Modified UIView category method spinWithDuration:.
 
 
 ### Installation
@@ -265,7 +265,7 @@ Returns masked view with rounded corners.
 
 Add pulse animation to view.
 
-    - (void)spinWithDuration:(CFTimeInterval)duration direction:(SpinDirection)direction;
+    - (void)spinWithDuration:(CFTimeInterval)duration angle:(CGFloat)angle;
 
 Spin view's layer.
 
