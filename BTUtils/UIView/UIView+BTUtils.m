@@ -85,7 +85,7 @@
     rotationAnimation.removedOnCompletion = NO;
     rotationAnimation.fillMode = kCAFillModeForwards;
     rotationAnimation.repeatCount = 0;
-    rotationAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    rotationAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault];
     rotationAnimation.toValue = @(angle);
     rotationAnimation.fromValue = duration == 0.f ? rotationAnimation.toValue : @(0.f);
     rotationAnimation.duration = duration;
