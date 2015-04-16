@@ -1,3 +1,6 @@
+Version 1.4.10
+- Added UIImage category method imageWithBorderWidth: inColor:.
+
 Version 1.4.9
 - Modified UIView category method spinWithDuration:.
 
