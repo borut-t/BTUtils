@@ -43,8 +43,6 @@
     // begin a new image that will be the new image with the rounded corners
     UIGraphicsBeginImageContextWithOptions(self.size, NO, 0.0);
     
-    borderWidth *= [UIScreen mainScreen].scale;
-    
     // draw your image
     CGRect imageRect = CGRectMake(0, 0, self.size.width, self.size.height);
     [self drawInRect:imageRect];
@@ -53,8 +51,7 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetLineWidth(context, borderWidth);
     CGContextSetStrokeColorWithColor(context, borderColor.CGColor);
-    CGContextAddRect(context, imageRect);
-    CGContextStrokePath(context);
+    CGContextStrokeRect(context, CGRectInset(imageRect, 0.5f, 0.5f));
     
     // get the image
     UIImage *roundedImage = UIGraphicsGetImageFromCurrentImageContext();
