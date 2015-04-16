@@ -2,8 +2,8 @@
 Usable utility methods, categories, macros and helpers to speed up your iOS development.
 
 
-### Changelog (v1.4.9)
-- Modified UIView category method spinWithDuration:.
+### Changelog (v1.4.10)
+- Added UIImage category method imageWithBorderWidth: inColor:.
 
 
 ### Installation
@@ -239,6 +239,10 @@ Creates an NSString object that contains the base 64 encoding of the receiver's 
 
 
 ### UIImage
+    - (UIImage *)imageWithBorderWidth:(CGFloat)borderWidth inColor:(UIColor *)borderColor
+
+Returns image with rounded corners and border color.
+
 	- (UIImage *)imageWithRoundedCornersRadius:(float)radius andBorderColor:(UIColor *)borderColor;
 
 Returns image with rounded corners and border color.
