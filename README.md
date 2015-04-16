@@ -2,8 +2,8 @@
 Usable utility methods, categories, macros and helpers to speed up your iOS development.
 
 
-### Changelog (v1.4.10)
-- Added UIImage category method imageWithBorderWidth: inColor:.
+### Changelog (v1.4.11)
+- Fixed border width in method imageWithBorderWidth:inColor:.
 
 
 ### Installation

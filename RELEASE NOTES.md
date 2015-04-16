@@ -1,3 +1,6 @@
+Version 1.4.11
+- Fixed border width in method imageWithBorderWidth:inColor:.
+
 Version 1.4.10
 - Added UIImage category method imageWithBorderWidth: inColor:.
 
