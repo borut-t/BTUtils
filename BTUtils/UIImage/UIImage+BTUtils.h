@@ -1,7 +1,7 @@
 //
 //  UIImage+BTUtils.h
 //
-//  Version 1.3.5
+//  Version 1.4.10
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2015 Borut Tomazin
@@ -33,6 +33,14 @@
 #import <UIKit/UIKit.h>
 
 @interface UIImage (BTUtils)
+
+/**
+ Returns image with border in given color.
+ 
+ @param borderWidth Border width in points.
+ @param borderColor A color to apply to border.
+ */
+- (UIImage *)imageWithBorderWidth:(CGFloat)borderWidth inColor:(UIColor *)borderColor;
 
 /**
  Returns image with rounded corners and border color.

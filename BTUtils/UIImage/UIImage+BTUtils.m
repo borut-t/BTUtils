@@ -1,7 +1,7 @@
 //
 //  UIImage+BTUtils.m
 //
-//  Version 1.3.5
+//  Version 1.4.10
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2015 Borut Tomazin
@@ -33,6 +33,37 @@
 #import "UIImage+BTUtils.h"
 
 @implementation UIImage (BTUtils)
+
+- (UIImage *)imageWithBorderWidth:(CGFloat)borderWidth inColor:(UIColor *)borderColor
+{
+    if (!borderColor || borderWidth == 0.f) {
+        return self;
+    }
+    
+    // begin a new image that will be the new image with the rounded corners
+    UIGraphicsBeginImageContextWithOptions(self.size, NO, 0.0);
+    
+    borderWidth *= [UIScreen mainScreen].scale;
+    
+    // draw your image
+    CGRect imageRect = CGRectMake(0, 0, self.size.width, self.size.height);
+    [self drawInRect:imageRect];
+    
+    // draw border
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetLineWidth(context, borderWidth);
+    CGContextSetStrokeColorWithColor(context, borderColor.CGColor);
+    CGContextAddRect(context, imageRect);
+    CGContextStrokePath(context);
+    
+    // get the image
+    UIImage *roundedImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    // lets forget about that we were drawing
+    UIGraphicsEndImageContext();
+    
+    return roundedImage;
+}
 
 - (UIImage *)imageWithRoundedCornersRadius:(CGFloat)radius fillColor:(UIColor *)fillColor borderColor:(UIColor *)borderColor
 {
