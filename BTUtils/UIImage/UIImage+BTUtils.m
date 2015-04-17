@@ -51,7 +51,7 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetLineWidth(context, borderWidth);
     CGContextSetStrokeColorWithColor(context, borderColor.CGColor);
-    CGContextStrokeRect(context, CGRectInset(imageRect, 0.5f, 0.5f));
+    CGContextStrokeRect(context, CGRectInset(imageRect, borderWidth/2.f, borderWidth/2.f));
     
     // get the image
     UIImage *roundedImage = UIGraphicsGetImageFromCurrentImageContext();
