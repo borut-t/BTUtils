@@ -1,7 +1,7 @@
 //
 //  BTUtils.h
 //
-//  Version 1.4.8
+//  Version 1.4.12
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2015 Borut Tomazin
@@ -36,6 +36,7 @@
 //#import "UIImage+BTUtils.h"
 //#import "UIView+BTUtils.h"
 //#import "NSArray+BTUtils.h"
+//#import "UIColor+BTUtils.h"
 //#import "UINavigationController+BTUtils.h"
 //#import "UITabBarController+BTUtils.h"
 
@@ -45,8 +46,6 @@
 #define RGBA(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:a]
 /** Checks if system version is greater than or equal to specific string version. */
 #define SYSTEM_VERSION_GREATER_OR_EQUAL_TO(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
-/** Return actual physical device size. */
-#define DEVICE_SIZE [[[[UIApplication sharedApplication] keyWindow] rootViewController].view convertRect:[[UIScreen mainScreen] bounds] fromView:nil].size
 /** Converts radians to degrees. */
 #define RADIANS_TO_DEGREES(radians) ((radians) * (180.0 / M_PI))
 /** Converts degrees to radians. */
@@ -94,7 +93,7 @@ typedef NS_ENUM(NSUInteger, PhoneScreenSize) {
 /** Returns device model. */
 + (NSString *)deviceModel;
 
-/** Returns screen size. */
+/** Returns device screen size. */
 + (CGSize)screenSize;
 
 /** Returns interface orienation. */
@@ -109,13 +108,16 @@ typedef NS_ENUM(NSUInteger, PhoneScreenSize) {
 /** Returns iPhone screen size. */
 + (PhoneScreenSize)phoneScreenSize;
 
-/** Returns YES if device is phone and 4inch (a.k.a. iPhone 5/5s/5c). */
+/** 
+ Returns YES if device is phone and 4inch (a.k.a. iPhone 5/5s/5c).
+ @deprecated Use phoneScreenSize method to detect screen size instead.
+ */
 + (BOOL)isPhone4Inch __attribute__((deprecated));
 
 /** Returns YES if device screen has retina resolution. */
 + (BOOL)isRetina;
 
-/**  Returns YES if right-to-left system language is set. */
+/** Returns YES if right-to-left system language is set. */
 + (BOOL)isRTL;
 
 /** Returns the string representation of a specified CFUUID object. */
@@ -166,11 +168,12 @@ typedef NS_ENUM(NSUInteger, PhoneScreenSize) {
 /**
  Returns uncached image from filesystem.
  @param name An image name to be loaded from the filesystem.
+ @deprecated This method is not maintained anymore.
  */
-+ (UIImage *)imageNamed:(NSString *)name;
++ (UIImage *)imageNamed:(NSString *)name __attribute__((deprecated));
 
 /**
- Generates new UIImage for selected color and size.
+ Generates new UIImage with given color and size.
  @param color UIColor of the target image.
  @param size CGSize of the target image.
  */
