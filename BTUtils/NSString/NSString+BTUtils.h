@@ -1,7 +1,7 @@
 //
 //  NSString+BTUtils.h
 //
-//  Version 1.3.10
+//  Version 1.4.12
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2015 Borut Tomazin
@@ -38,13 +38,19 @@
 
 @interface NSString (BTUtils)
 
-/** Decode all HTML entities using GTM. */
+/** 
+ Decode all HTML entities using GTM. 
+ */
 - (NSString *)stringByDecodingHTMLEntities;
 
-/** Encode all HTML entities using GTM */
+/** 
+ Encode all HTML entities using GTM
+ */
 - (NSString *)stringByEncodingHTMLEntities;
 
-/** Strip HTML tags from HTML string to plain text. */
+/** 
+ Strip HTML tags from HTML string to plain text. 
+ */
 - (NSString *)stringByConvertingHTMLToPlainText;
 
 /**
@@ -53,19 +59,29 @@
  */
 - (NSUInteger)indexOf:(NSString *)string;
 
-/** Returns YES if substring is part of string. */
+/** 
+ Returns YES if substring is part of string. 
+ */
 - (BOOL)containsString:(NSString *)substring;
 
-/** Returns url encoded string. */
+/** 
+ Returns url encoded string. 
+ */
 - (NSString *)urlEncode;
 
-/** Trims leading and trailing whitespace and newline characters from a given string. */
+/** 
+ Trims leading and trailing whitespace and newline characters from a given string.
+ */
 - (NSString *)trim;
 
-/** Creates an NSData object containing the base64 decoded representation of the base64 string. */
+/** 
+ Creates an NSData object containing the base64 decoded representation of the base64 string. 
+ */
 - (NSData *)dataFromBase64String;
 
-/** Returns UTF8 hexadecimal representation of string. */
+/** 
+ Returns UTF8 hexadecimal representation of string. 
+ */
 - (NSString *)hexValue;
 
 /**
@@ -83,19 +99,26 @@
  */
 - (CGSize)textSizeWithFont:(UIFont *)font fieldSize:(CGSize)size;
 
-/** Returns BOOL whenever email is valid or not. */
+/** 
+ Returns BOOL whenever email is valid or not.
+ */
 - (BOOL)isEmailValid;
 
-/** Returns BOOL whenever URL is valid or not. */
+/** 
+ Returns BOOL whenever URL is valid or not. 
+ */
 - (BOOL)isURLValid;
 
 
-
 #pragma mark - Crypto
-/** MD5 crypto hash. */
+/** 
+ MD5 crypto hash. 
+ */
 - (NSString *)MD5;
 
-/** SHA1 crypto hash. */
+/** 
+ SHA1 crypto hash. 
+ */
 - (NSString *)SHA1;
 
 @end

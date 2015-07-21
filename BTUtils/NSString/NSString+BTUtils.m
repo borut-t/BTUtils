@@ -1,7 +1,7 @@
 //
 //  NSString+BTUtils.m
 //
-//  Version 1.3.10
+//  Version 1.4.12
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2015 Borut Tomazin
@@ -41,9 +41,9 @@
 
 //static unsigned char base64EncodeLookup[65] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 
-//
-// Mapping from ASCII character to 6 bit pattern.
-//
+/**
+ Mapping from ASCII character to 6 bit pattern.
+ */
 static unsigned char base64DecodeLookup[256] =
 {
     xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx,
@@ -64,19 +64,16 @@ static unsigned char base64DecodeLookup[256] =
     xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx, xx,
 };
 
-//
-// NewBase64Decode
-//
-// Decodes the base64 ASCII string in the inputBuffer to a newly malloced
-// output buffer.
-//
-//  inputBuffer - the source ASCII string for the decode
-//	length - the length of the string or -1 (to specify strlen should be used)
-//	outputLength - if not-NULL, on output will contain the decoded length
-//
-// returns the decoded buffer. Must be free'd by caller. Length is given by
-//	outputLength.
-//
+/**
+ NewBase64Decode
+ 
+ Decodes the base64 ASCII string in the inputBuffer to a newly malloced output buffer.
+ 
+ @param inputBuffer - the source ASCII string for the decode
+ @param length - the length of the string or -1 (to specify strlen should be used)
+ @param outputLength - if not-NULL, on output will contain the decoded length
+ @return The decoded buffer. Must be free'd by caller. Length is given by outputLength.
+ */
 void *NewBase64Decode(const char *inputBuffer, size_t length, size_t *outputLength)
 {
 	if (length == -1) {
@@ -179,10 +176,6 @@ void *NewBase64Decode(const char *inputBuffer, size_t length, size_t *outputLeng
 
 - (NSData *)dataFromBase64String
 {
-//    if ([self respondsToSelector:@selector(base64EncodedDataWithOptions:)]) {
-//        return [self base64EncodedDataWithOptions:NSDataBase64Encoding64CharacterLineLength];
-//    }
-    
 	NSData *data = [self dataUsingEncoding:NSASCIIStringEncoding];
 	size_t outputLength;
 	void *outputBuffer = NewBase64Decode([data bytes], [data length], &outputLength);

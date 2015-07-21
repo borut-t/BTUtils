@@ -1,7 +1,7 @@
 //
 //  UIView+BTUtils.h
 //
-//  Version 1.4.9
+//  Version 1.4.12
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2015 Borut Tomazin
@@ -31,7 +31,6 @@
 //
 
 #import "UIView+BTUtils.h"
-#import <QuartzCore/QuartzCore.h>
 
 @implementation UIView (BTUtils)
 

@@ -1,7 +1,7 @@
 //
 //  UITabBarController+BTUtils.m
 //
-//  Version 1.3
+//  Version 1.4.12
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2015 Borut Tomazin
@@ -32,8 +32,8 @@
 
 #import "UITabBarController+BTUtils.h"
 
-#define kAnimationInterval 0.3
-#define kTabBarHeight 49.f
+static CGFloat const kAnimationInterval = 0.3;
+static CGFloat const kTabBarHeight = 49.f;
 
 @implementation UITabBarController (BTUtils)
 

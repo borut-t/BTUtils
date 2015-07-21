@@ -1,7 +1,7 @@
 //
 //  UIColor+BTUtils.h
 //
-//  Version 1.4.1
+//  Version 1.4.12
 //
 //  Created by Borut Tomazin on 12/19/2014.
 //  Copyright 2015 Borut Tomazin
@@ -34,7 +34,7 @@
 
 @interface UIColor (BTUtils)
 
-/** Returns color for given from hex color format. */
+/** Returns color for given hex color format. */
 + (UIColor *)colorWithHexString:(NSString *)hexString;
 
 @end
