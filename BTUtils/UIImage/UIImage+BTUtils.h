@@ -1,7 +1,7 @@
 //
 //  UIImage+BTUtils.h
 //
-//  Version 1.4.10
+//  Version 1.4.12
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2015 Borut Tomazin
@@ -69,5 +69,11 @@
  @param color Shadow color.
  */
 - (UIImage *)imageWithShadowSize:(CGFloat)size shadowColor:(UIColor *)color;
+
+/** 
+ Returns image tinted with given tintColor.
+ @param tintColor Color to tint image with.
+ */
+- (UIImage *)imageTintedWithColor:(UIColor *)tintColor;
 
 @end

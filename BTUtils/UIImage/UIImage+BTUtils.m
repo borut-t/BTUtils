@@ -1,7 +1,7 @@
 //
 //  UIImage+BTUtils.m
 //
-//  Version 1.4.10
+//  Version 1.4.12
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2015 Borut Tomazin
@@ -204,6 +204,25 @@
     CGImageRelease(shadowedCGImage);
     
     return shadowedImage;
+}
+
+- (UIImage *)imageTintedWithColor:(UIColor *)tintColor
+{
+    // begin a new image that will be the new image
+    UIGraphicsBeginImageContextWithOptions(self.size, NO, 0.0);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGRect rect = CGRectMake(0.f, 0.f, self.size.width, self.size.height);
+    
+    [self drawInRect:rect blendMode:kCGBlendModeNormal alpha:1.f];
+    
+    CGContextSetBlendMode(context, kCGBlendModeSourceIn);
+    CGContextSetFillColorWithColor(context, tintColor.CGColor);
+    CGContextFillRect(context, rect);
+    
+    UIImage *tintedImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return tintedImage;
 }
 
 @end
