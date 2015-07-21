@@ -1,7 +1,7 @@
 //
 //  NSArray+BTUtils.h
 //
-//  Version 1.4
+//  Version 1.4.12
 //
 //  Created by Borut Tomazin on 12/19/2014.
 //  Copyright 2015 Borut Tomazin
@@ -34,7 +34,10 @@
 
 @interface NSArray (BTUtils)
 
-/** Reverses array values. */
+/** Returns reversed array. */
 - (NSArray *)reversedArray;
+
+/** Returns unique objects in array. */
+- (NSArray *)uniqueObjects;
 
 @end

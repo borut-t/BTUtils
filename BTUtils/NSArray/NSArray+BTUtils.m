@@ -1,7 +1,7 @@
 //
 //  NSArray+BTUtils.m
 //
-//  Version 1.4
+//  Version 1.4.12
 //
 //  Created by Borut Tomazin on 12/19/2014.
 //  Copyright 2015 Borut Tomazin
@@ -36,11 +36,12 @@
 
 - (NSArray *)reversedArray
 {
-    NSMutableArray *reversedArray = [NSMutableArray arrayWithCapacity:self.count];
-    for (id element in [self reverseObjectEnumerator]) {
-        [reversedArray addObject:element];
-    }
-    return [NSArray arrayWithArray:reversedArray];
+    return [[self reverseObjectEnumerator] allObjects];
+}
+
+- (NSArray *)uniqueObjects
+{
+    return [NSOrderedSet orderedSetWithArray:self].array.copy;
 }
 
 @end
