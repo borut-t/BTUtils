@@ -2,8 +2,12 @@
 Usable utility methods, categories, macros and helpers to speed up your iOS development.
 
 
-### Changelog (v1.4.11)
-- Fixed border width in method imageWithBorderWidth:inColor:.
+### Changelog (v1.4.12)
+- Added method imageTintedWithColor: on UIImage category.
+- Added method uniqueObjects: on NSArray category.
+- Deprecated method imageNamed: in main class.
+- Removed DEVICE_SIZE macro in main class as it duplicates method screenSize.
+- Code cleanup.
 
 
 ### Installation
@@ -30,10 +34,6 @@ UIColor on-liner for native colorWithRed method with alpha.
 	SYSTEM_VERSION_GREATER_OR_EQUAL_TO(v)
 
 Checks if system version is greater than or equal to specific string version.
-
-    DEVICE_SIZE
-
-Return actual physical device size.
 
     RADIANS_TO_DEGREES(radians)
 
@@ -152,7 +152,7 @@ Returns class property names.
 
 
 ### Image
-	+ (UIImage *)imageNamed:(NSString *)name;
+	+ (UIImage *)imageNamed:(NSString *)name; -deprecated
 
 Returns uncached image from filesystem.
 
@@ -259,6 +259,10 @@ Returns image with given opacity.
 
 Returns given image with shadow.
 
+    - (UIImage *)imageTintedWithColor:(UIColor *)tintColor;
+
+Returns image tinted with given tintColor.
+
 
 ### UIView
 	- (void)maskRoundCorners:(UIRectCorner)corners radius:(CGFloat)radius;
@@ -334,6 +338,10 @@ Returns centered frame for given child width and height in parent frame.
     - (NSArray *)reversedArray;
 
 Reverses array values.
+
+    - (NSArray *)uniqueObjects;
+
+Returns unique objects in array.
 
 
 ### UIColor
