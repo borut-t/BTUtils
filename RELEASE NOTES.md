@@ -1,3 +1,10 @@
+Version 1.4.12
+- Added method imageTintedWithColor: on UIImage category.
+- Added method uniqueObjects: on NSArray category.
+- Deprecated method imageNamed: in main class.
+- Removed DEVICE_SIZE macro in main class as it duplicates method screenSize.
+- Code cleanup.
+
 Version 1.4.11
 - Fixed border width in method imageWithBorderWidth:inColor:.
 
