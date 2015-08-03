@@ -1,3 +1,6 @@
+Version 1.4.13
+- Modified appName capitalisation.
+
 Version 1.4.12
 - Added method imageTintedWithColor: on UIImage category.
 - Added method uniqueObjects: on NSArray category.
