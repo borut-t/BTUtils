@@ -2,12 +2,8 @@
 Usable utility methods, categories, macros and helpers to speed up your iOS development.
 
 
-### Changelog (v1.4.12)
-- Added method imageTintedWithColor: on UIImage category.
-- Added method uniqueObjects: on NSArray category.
-- Deprecated method imageNamed: in main class.
-- Removed DEVICE_SIZE macro in main class as it duplicates method screenSize.
-- Code cleanup.
+### Changelog (v1.4.13)
+- Modified appName capitalisation.
 
 
 ### Installation
