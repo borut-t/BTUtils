@@ -1,7 +1,7 @@
 //
 //  BTUtils.h
 //
-//  Version 1.4.12
+//  Version 1.4.13
 //
 //  Created by Borut Tomazin on 8/30/2013.
 //  Copyright 2015 Borut Tomazin
